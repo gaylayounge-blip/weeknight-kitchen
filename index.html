@@ -22,6 +22,19 @@
   .nav-cta{background:var(--ice-dark);color:#fff;font-size:.85rem;font-weight:500;padding:.6rem 1.4rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
   .nav-cta:hover{background:var(--terra);}
   #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 2.5rem 4rem;gap:4rem;max-width:1200px;margin:0 auto;}
+   .hero-bg {
+    background-image: url('Chicken-enchilladas-prebake_overview.jpg');
+    background-size: cover;
+    background-position: center 60%;
+    position: relative;
+  }
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(250,247,242,0.82);
+    pointer-events: none;
+  }
   .badge{display:inline-flex;align-items:center;gap:8px;background:var(--ice);color:var(--ice-dark);font-size:.75rem;font-weight:500;padding:5px 14px;border-radius:2rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.4rem;}
   .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ice-dark);}
   h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.15;margin-bottom:1.25rem;}
@@ -240,7 +253,7 @@
       <div class="mc"><div class="mcat">Pasta</div><div class="mname">Lasagne al forno</div><div class="mdesc">Layers of ricotta, meat sauce & marinara. Reheats beautifully in 45 min.</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
             <div class="mc"><div class="mcat">Pasta</div><div class="mname">Mac & Cheese</div><div class="mdesc">Combination of cheeses, layered in the dish as well as melted into a rich and creamy cheese sauce, for the ultimate in cheesy deliciousness!</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$18</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
      <div class="mc"><div class="mcat">Pasta</div><div class="mname">Fettuccine Alfredo</div><div class="mdesc">Warm noodles made with parmesan, butter, heavy cream tossed together. It only takes about 30 minutes and is one of those perfect family dinners, since it's easy-peasy and everyone loves it!</div><div class="mbs"><span class="mb mbg">High-calcium</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$18</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
-      <div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">Chicken enchiladas</div><div class="mdesc">Braised chicken thighs, pepperjack cheese, tasty cilantro rice and charro beans rolled in corn tortillas.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbg">Kid-friendly</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
+          <img src="chicken-enchillidas-prebake.jpg" alt="Enchiladas pre-bake" style="width:100%;height:180px;object-fit:cover;object-position:center top;display:block;"><div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">Chicken enchiladas</div><div class="mdesc">Braised chicken thighs, pepperjack cheese, tasty cilantro rice and charro beans rolled in corn tortillas.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbg">Kid-friendly</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
       <div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">Mexican chicken & rice</div><div class="mdesc">Tender chicken breast with a spiced mix of black beans and corn, along with soft rice.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$18</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
       <div class="mc"><div class="mcat">Comfort</div><div class="mname">Chicken & rice</div><div class="mdesc">Baked seasoned chicken quarters with steamed rice.</div><div class="mbs"><span class="mb mbg">Classic</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$16</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
      <div class="mc"><div class="mcat">Comfort</div><div class="mname">Broccoli cheddar soup</div><div class="mdesc">Rich, creamy soup — soups freeze better than almost anything else.</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$14</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
