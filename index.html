@@ -6,237 +6,236 @@
 <title>Fresh But Frozen · The Weeknight Kitchen · North Austin · Temple · Belton Meal Prep</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{
-    --cream:#FAF7F2;--warm:#FFFEF9;--sage:#7A9E7E;--sage-light:#EAF0EA;--sage-dark:#4A6E4E;
-    --terra:#C4714A;--terra-light:#F5EAE3;--ice:#E8F4F8;--ice-dark:#2A6B8A;
-    --charcoal:#2C2C2A;--mid:#6B6860;--light:#A8A59E;--border:rgba(44,44,42,0.1);
-  }
-  html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:rgba(250,247,242,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
-  .nav-logo-img{height:44px;width:auto;}
-  .nav-links{display:flex;gap:1.75rem;list-style:none;}
-  .nav-links a{font-size:.82rem;font-weight:500;color:var(--mid);text-decoration:none;text-transform:uppercase;letter-spacing:.04em;transition:color .2s;}
-  .nav-links a:hover{color:var(--charcoal);}
-  .nav-cta{background:var(--ice-dark);color:#fff;font-size:.85rem;font-weight:500;padding:.6rem 1.4rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
-  .nav-cta:hover{background:var(--terra);}
-  #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 2.5rem 4rem;gap:4rem;max-width:1200px;margin:0 auto;}
-
-  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--ice);color:var(--ice-dark);font-size:.75rem;font-weight:500;padding:5px 14px;border-radius:2rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.4rem;}
-  .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ice-dark);}
-  h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.15;margin-bottom:1.25rem;}
-  h1 em{font-style:italic;color:var(--ice-dark);}
-  .hero-desc{font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:2rem;max-width:460px;}
-  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem;}
-  .btn-p{background:var(--ice-dark);color:#fff;font-size:.95rem;font-weight:500;padding:.85rem 2rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
-  .btn-p:hover{background:var(--terra);}
-  .btn-s{font-size:.95rem;font-weight:500;color:var(--charcoal);text-decoration:none;border-bottom:1.5px solid var(--charcoal);padding-bottom:2px;}
-  .btn-s:hover{color:var(--ice-dark);border-color:var(--ice-dark);}
-  .stats{display:flex;gap:2rem;flex-wrap:wrap;}
-  .stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--charcoal);}
-  .stat-l{font-size:.75rem;color:var(--light);text-transform:uppercase;letter-spacing:.05em;}
-  .hero-v{display:flex;flex-direction:column;gap:1rem;align-items:flex-end;}
-  .hcard{background:var(--warm);border:1px solid var(--border);border-radius:1.5rem;padding:1.5rem;width:100%;max-width:360px;animation:fA 5s ease-in-out infinite;}
-  @keyframes fA{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .hcard-tag{font-size:.72rem;font-weight:500;color:var(--ice-dark);background:var(--ice);padding:4px 10px;border-radius:1rem;display:inline-block;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.04em;}
-  .hcard-title{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.4rem;}
-  .hcard-sub{font-size:.82rem;color:var(--mid);margin-bottom:1rem;}
-  .hcard-items{display:flex;flex-direction:column;gap:6px;}
-  .hitem{display:flex;justify-content:space-between;font-size:.82rem;padding:5px 0;border-bottom:.5px solid var(--border);}
-  .hitem:last-child{border-bottom:none;}
-  .hprice{font-weight:500;color:var(--ice-dark);}
-  .hmini{background:var(--ice);border-radius:1.25rem;padding:1rem 1.25rem;width:80%;font-size:.85rem;color:var(--charcoal);animation:fB 5s ease-in-out infinite;align-self:flex-start;}
-  @keyframes fB{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-  .hmini strong{color:var(--ice-dark);font-weight:500;}
-  section{padding:5rem 2.5rem;}
-  .si{max-width:1100px;margin:0 auto;}
-  .ey{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ice-dark);margin-bottom:.75rem;}
-  h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem;}
-  .ssub{font-size:1rem;color:var(--mid);max-width:540px;line-height:1.75;margin-bottom:2.5rem;}
-  #how{background:var(--warm);}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;}
-  .snum{font-family:'Playfair Display',serif;font-size:3rem;color:var(--ice);line-height:1;margin-bottom:.75rem;}
-  .stitle{font-size:1rem;font-weight:500;margin-bottom:.4rem;}
-  .sdesc{font-size:.88rem;color:var(--mid);line-height:1.65;}
-  #menu{background:var(--cream);}
-  .mtabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap;}
-  .mtab{font-size:.82rem;font-weight:500;padding:6px 18px;border-radius:2rem;cursor:pointer;border:1px solid var(--border);color:var(--mid);background:transparent;transition:all .15s;}
-  .mtab.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
-  .mpanel{display:none;}
-  .mpanel.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
-  .mc{background:var(--warm);border:1px solid var(--border);border-radius:1.25rem;padding:1.25rem;transition:transform .2s;}
-  .mc:hover{transform:translateY(-4px);}
-  .mc.new{border:2px solid #1D9E75;}
-  .mcat{font-size:.7rem;font-weight:500;color:var(--light);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;}
-  .mname{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:5px;}
-  .mdesc{font-size:.82rem;color:var(--mid);line-height:1.55;margin-bottom:.75rem;}
-  .mfoot{display:flex;justify-content:space-between;align-items:center;}
-  .mprice{font-size:1.1rem;font-weight:500;color:var(--ice-dark);}
-  .mserve{font-size:.75rem;color:var(--light);}
-  .mbs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
-  .mb{font-size:.7rem;padding:2px 8px;border-radius:1rem;font-weight:500;}
-  .mbb{background:var(--ice);color:var(--ice-dark);}
-  .mbg{background:#EAF3DE;color:#3B6D11;}
-  .mba{background:#FAEEDA;color:#854F0B;}
-  .mbp{background:#EEEDFE;color:#534AB7;}
-  .mbn{background:#1D9E75;color:#fff;}
-  .ntag{display:inline-block;background:#1D9E75;color:#fff;font-size:.7rem;font-weight:500;padding:2px 9px;border-radius:1rem;margin-bottom:6px;}
-  #pricing{background:var(--charcoal);}
-  #pricing .ey{color:var(--sage);}
-  #pricing h2{color:var(--cream);}
-  #pricing .ssub{color:rgba(250,247,242,.55);}
-  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-  .pc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:1.5rem;padding:2rem;}
-  .pc.ft{background:var(--warm);border-color:var(--warm);}
-  .pey{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:rgba(250,247,242,.45);margin-bottom:.5rem;}
-  .pc.ft .pey{color:var(--mid);}
-  .pbadge{display:inline-block;background:var(--ice);color:var(--ice-dark);font-size:.7rem;font-weight:500;padding:3px 10px;border-radius:1rem;margin-bottom:.5rem;}
-  .pp{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--cream);line-height:1;margin-bottom:4px;}
-  .pc.ft .pp{color:var(--charcoal);}
-  .pper{font-size:.82rem;color:rgba(250,247,242,.4);margin-bottom:1.25rem;}
-  .pc.ft .pper{color:var(--mid);}
-  .pi{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:1.75rem;}
-  .pi li{font-size:.88rem;color:rgba(250,247,242,.65);display:flex;align-items:center;gap:8px;}
-  .pc.ft .pi li{color:var(--mid);}
-  .pi li::before{content:'';width:5px;height:5px;border-radius:50%;background:#2A6B8A;flex-shrink:0;}
-  .pbtn{display:block;text-align:center;padding:.8rem;border-radius:2rem;font-size:.88rem;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.2);color:var(--cream);transition:background .2s;}
-  .pbtn:hover{background:rgba(255,255,255,.1);}
-  .pc.ft .pbtn{background:var(--ice-dark);color:#fff;border-color:var(--ice-dark);}
-  .pc.ft .pbtn:hover{background:var(--terra);}
-  #compare{background:var(--sage-light);}
-  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-  .ccard{background:var(--warm);border:1px solid var(--border);border-radius:1.5rem;padding:2rem;}
-  .ccard.hi{border:2px solid var(--ice-dark);}
-  .ctag{display:inline-block;font-size:.7rem;font-weight:500;padding:3px 10px;border-radius:1rem;margin-bottom:.75rem;}
-  .ctb{background:var(--ice);color:var(--ice-dark);}
-  .ctt{background:var(--terra-light);color:var(--terra);}
-  .ctitle{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.5rem;}
-  .cdesc{font-size:.88rem;color:var(--mid);line-height:1.65;margin-bottom:1.25rem;}
-  .clist{list-style:none;display:flex;flex-direction:column;gap:5px;}
-  .clist li{font-size:.85rem;color:var(--mid);display:flex;align-items:center;gap:8px;}
-  .clist li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;}
-  #about{background:var(--warm);}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto;}
-  .about-card{background:var(--cream);border-radius:2rem;padding:2.5rem;border:1px solid var(--border);}
-  .about-avatar{width:64px;height:64px;border-radius:50%;background:var(--terra-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--terra);margin-bottom:1.25rem;}
-  .about-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--charcoal);line-height:1.65;margin-bottom:1.25rem;}
-  .about-name{font-size:.88rem;font-weight:500;color:var(--charcoal);}
-  .about-sub{font-size:.8rem;color:var(--mid);}
-  .values{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem;}
-  .value{display:flex;gap:1rem;align-items:flex-start;}
-  .vdot{width:8px;height:8px;border-radius:50%;background:var(--terra);margin-top:6px;flex-shrink:0;}
-  .vtitle{font-size:.95rem;font-weight:500;color:var(--charcoal);margin-bottom:2px;}
-  .vdesc{font-size:.85rem;color:var(--mid);line-height:1.6;}
-  #order{background:var(--cream);}
-  .fw{max-width:680px;}
-  .fg{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem;}
-  .ff{grid-column:1/-1;}
-  .fgrp{display:flex;flex-direction:column;gap:6px;}
-  .flbl{font-size:.8rem;font-weight:500;color:var(--charcoal);}
-  .fi,.fs,.fta{background:var(--warm);border:1px solid var(--border);border-radius:.75rem;padding:.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--charcoal);outline:none;transition:border-color .2s;width:100%;}
-  .fi:focus,.fs:focus,.fta:focus{border-color:var(--ice-dark);}
-  .fta{resize:vertical;min-height:90px;}
-  .fbtn{background:var(--ice-dark);color:#fff;border:none;border-radius:2rem;padding:1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.5rem;transition:background .2s;}
-  .fbtn:hover{background:var(--terra);}
-  .fnote{font-size:.78rem;color:var(--light);margin-top:.5rem;}
-  footer{background:var(--charcoal);padding:3rem 2.5rem 2rem;text-align:center;}
-  .footer-logo{height:64px;width:auto;margin-bottom:1.25rem;opacity:.9;}
-  footer p{font-size:.82rem;color:rgba(250,247,242,.45);}
-  .fu{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
-  .fu.vis{opacity:1;transform:translateY(0);}
-  @media(max-width:768px){
-    nav{padding:1rem 1.25rem;}
-    .nav-links{display:none;}
-    #hero{grid-template-columns:1fr;padding:6rem 1.25rem 3rem;gap:2rem;}
-    .hero-v{align-items:center;}
-    .hcard,.hmini{max-width:100%;width:100%;}
-    section{padding:3.5rem 1.25rem;}
-    .cgrid,.about-grid{grid-template-columns:1fr;gap:2rem;}
-    .fg{grid-template-columns:1fr;}
-    .ff{grid-column:1;}
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+--cream:#FAF7F2;--warm:#FFFEF9;--sage:#7A9E7E;--sage-light:#EAF0EA;--sage-dark:#4A6E4E;
+--terra:#C4714A;--terra-light:#F5EAE3;--ice:#E8F4F8;--ice-dark:#2A6B8A;
+--charcoal:#2C2C2A;--mid:#6B6860;--light:#A8A59E;--border:rgba(44,44,42,0.1);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:rgba(250,247,242,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-logo-img{height:44px;width:auto;}
+.nav-links{display:flex;gap:1.75rem;list-style:none;}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--mid);text-decoration:none;text-transform:uppercase;letter-spacing:.04em;transition:color .2s;}
+.nav-links a:hover{color:var(--charcoal);}
+.nav-cta{background:var(--ice-dark);color:#fff;font-size:.85rem;font-weight:500;padding:.6rem 1.4rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--terra);}
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 2.5rem 4rem;gap:4rem;max-width:1200px;margin:0 auto;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--ice);color:var(--ice-dark);font-size:.75rem;font-weight:500;padding:5px 14px;border-radius:2rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.4rem;}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ice-dark);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.15;margin-bottom:1.25rem;}
+h1 em{font-style:italic;color:var(--ice-dark);}
+.hero-desc{font-size:1.05rem;color:var(--mid);line-height:1.75;margin-bottom:2rem;max-width:460px;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:2.5rem;}
+.btn-p{background:var(--ice-dark);color:#fff;font-size:.95rem;font-weight:500;padding:.85rem 2rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
+.btn-p:hover{background:var(--terra);}
+.btn-s{font-size:.95rem;font-weight:500;color:var(--charcoal);text-decoration:none;border-bottom:1.5px solid var(--charcoal);padding-bottom:2px;}
+.btn-s:hover{color:var(--ice-dark);border-color:var(--ice-dark);}
+.stats{display:flex;gap:2rem;flex-wrap:wrap;}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--charcoal);}
+.stat-l{font-size:.75rem;color:var(--light);text-transform:uppercase;letter-spacing:.05em;}
+.hero-v{display:flex;flex-direction:column;gap:1rem;align-items:flex-end;}
+.hcard{background:var(--warm);border:1px solid var(--border);border-radius:1.5rem;padding:1.5rem;width:100%;max-width:360px;animation:fA 5s ease-in-out infinite;}
+@keyframes fA{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hcard-tag{font-size:.72rem;font-weight:500;color:var(--ice-dark);background:var(--ice);padding:4px 10px;border-radius:1rem;display:inline-block;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+.hcard-title{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.4rem;}
+.hcard-sub{font-size:.82rem;color:var(--mid);margin-bottom:1rem;}
+.hcard-items{display:flex;flex-direction:column;gap:6px;}
+.hitem{display:flex;justify-content:space-between;font-size:.82rem;padding:5px 0;border-bottom:.5px solid var(--border);}
+.hitem:last-child{border-bottom:none;}
+.hprice{font-weight:500;color:var(--ice-dark);}
+.hmini{background:var(--ice);border-radius:1.25rem;padding:1rem 1.25rem;width:80%;font-size:.85rem;color:var(--charcoal);animation:fB 5s ease-in-out infinite;align-self:flex-start;}
+@keyframes fB{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hmini strong{color:var(--ice-dark);font-weight:500;}
+section{padding:5rem 2.5rem;}
+.si{max-width:1100px;margin:0 auto;}
+.ey{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ice-dark);margin-bottom:.75rem;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem;}
+.ssub{font-size:1rem;color:var(--mid);max-width:540px;line-height:1.75;margin-bottom:2.5rem;}
+#how{background:var(--warm);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;}
+.snum{font-family:'Playfair Display',serif;font-size:3rem;color:var(--ice);line-height:1;margin-bottom:.75rem;}
+.stitle{font-size:1rem;font-weight:500;margin-bottom:.4rem;}
+.sdesc{font-size:.88rem;color:var(--mid);line-height:1.65;}
+#menu{background:var(--cream);}
+.mtabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap;}
+.mtab{font-size:.82rem;font-weight:500;padding:6px 18px;border-radius:2rem;cursor:pointer;border:1px solid var(--border);color:var(--mid);background:transparent;transition:all .15s;}
+.mtab.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
+.mpanel{display:none;}
+.mpanel.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
+.mc{background:var(--warm);border:1px solid var(--border);border-radius:1.25rem;padding:1.25rem;transition:transform .2s;}
+.mc:hover{transform:translateY(-4px);}
+.mc.new{border:2px solid #1D9E75;}
+.mcat{font-size:.7rem;font-weight:500;color:var(--light);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;}
+.mname{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:5px;}
+.mdesc{font-size:.82rem;color:var(--mid);line-height:1.55;margin-bottom:.75rem;}
+.mfoot{display:flex;justify-content:space-between;align-items:center;}
+.mprice{font-size:1.1rem;font-weight:500;color:var(--ice-dark);}
+.mserve{font-size:.75rem;color:var(--light);}
+.mbs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
+.mb{font-size:.7rem;padding:2px 8px;border-radius:1rem;font-weight:500;}
+.mbb{background:var(--ice);color:var(--ice-dark);}
+.mbg{background:#EAF3DE;color:#3B6D11;}
+.mba{background:#FAEEDA;color:#854F0B;}
+.mbp{background:#EEEDFE;color:#534AB7;}
+.mbn{background:#1D9E75;color:#fff;}
+.ntag{display:inline-block;background:#1D9E75;color:#fff;font-size:.7rem;font-weight:500;padding:2px 9px;border-radius:1rem;margin-bottom:6px;}
+#pricing{background:var(--charcoal);}
+#pricing .ey{color:var(--sage);}
+#pricing h2{color:var(--cream);}
+#pricing .ssub{color:rgba(250,247,242,.55);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+.pc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:1.5rem;padding:2rem;}
+.pc.ft{background:var(--warm);border-color:var(--warm);}
+.pey{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:rgba(250,247,242,.45);margin-bottom:.5rem;}
+.pc.ft .pey{color:var(--mid);}
+.pbadge{display:inline-block;background:var(--ice);color:var(--ice-dark);font-size:.7rem;font-weight:500;padding:3px 10px;border-radius:1rem;margin-bottom:.5rem;}
+.pp{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--cream);line-height:1;margin-bottom:4px;}
+.pc.ft .pp{color:var(--charcoal);}
+.pper{font-size:.82rem;color:rgba(250,247,242,.4);margin-bottom:1.25rem;}
+.pc.ft .pper{color:var(--mid);}
+.pi{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:1.75rem;}
+.pi li{font-size:.88rem;color:rgba(250,247,242,.65);display:flex;align-items:center;gap:8px;}
+.pc.ft .pi li{color:var(--mid);}
+.pi li::before{content:'';width:5px;height:5px;border-radius:50%;background:#2A6B8A;flex-shrink:0;}
+.pbtn{display:block;text-align:center;padding:.8rem;border-radius:2rem;font-size:.88rem;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.2);color:var(--cream);transition:background .2s;}
+.pbtn:hover{background:rgba(255,255,255,.1);}
+.pc.ft .pbtn{background:var(--ice-dark);color:#fff;border-color:var(--ice-dark);}
+.pc.ft .pbtn:hover{background:var(--terra);}
+#compare{background:var(--sage-light);}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.ccard{background:var(--warm);border:1px solid var(--border);border-radius:1.5rem;padding:2rem;}
+.ccard.hi{border:2px solid var(--ice-dark);}
+.ctag{display:inline-block;font-size:.7rem;font-weight:500;padding:3px 10px;border-radius:1rem;margin-bottom:.75rem;}
+.ctb{background:var(--ice);color:var(--ice-dark);}
+.ctt{background:var(--terra-light);color:var(--terra);}
+.ctitle{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.5rem;}
+.cdesc{font-size:.88rem;color:var(--mid);line-height:1.65;margin-bottom:1.25rem;}
+.clist{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.clist li{font-size:.85rem;color:var(--mid);display:flex;align-items:center;gap:8px;}
+.clist li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;}
+#about{background:var(--warm);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto;}
+.about-card{background:var(--cream);border-radius:2rem;padding:2.5rem;border:1px solid var(--border);}
+.about-avatar{width:64px;height:64px;border-radius:50%;background:var(--terra-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--terra);margin-bottom:1.25rem;}
+.about-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--charcoal);line-height:1.65;margin-bottom:1.25rem;}
+.about-name{font-size:.88rem;font-weight:500;color:var(--charcoal);}
+.about-sub{font-size:.8rem;color:var(--mid);}
+.values{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem;}
+.value{display:flex;gap:1rem;align-items:flex-start;}
+.vdot{width:8px;height:8px;border-radius:50%;background:var(--terra);margin-top:6px;flex-shrink:0;}
+.vtitle{font-size:.95rem;font-weight:500;color:var(--charcoal);margin-bottom:2px;}
+.vdesc{font-size:.85rem;color:var(--mid);line-height:1.6;}
+#order{background:var(--cream);}
+.fw{max-width:680px;}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem;}
+.ff{grid-column:1/-1;}
+.fgrp{display:flex;flex-direction:column;gap:6px;}
+.flbl{font-size:.8rem;font-weight:500;color:var(--charcoal);}
+.fi,.fs,.fta{background:var(--warm);border:1px solid var(--border);border-radius:.75rem;padding:.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--charcoal);outline:none;transition:border-color .2s;width:100%;}
+.fi:focus,.fs:focus,.fta:focus{border-color:var(--ice-dark);}
+.fta{resize:vertical;min-height:90px;}
+.fbtn{background:var(--ice-dark);color:#fff;border:none;border-radius:2rem;padding:1rem 2.5rem;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.5rem;transition:background .2s;}
+.fbtn:hover{background:var(--terra);}
+.fnote{font-size:.78rem;color:var(--light);margin-top:.5rem;}
+footer{background:var(--charcoal);padding:3rem 2.5rem 2rem;text-align:center;}
+.footer-logo{height:64px;width:auto;margin-bottom:1.25rem;opacity:.9;}
+footer p{font-size:.82rem;color:rgba(250,247,242,.45);}
+.fu{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+@media(max-width:768px){
+nav{padding:1rem 1.25rem;}
+.nav-links{display:none;}
+#hero{grid-template-columns:1fr;padding:6rem 1.25rem 3rem;gap:2rem;}
+.hero-v{align-items:center;}
+.hcard,.hmini{max-width:100%;width:100%;}
+section{padding:3.5rem 1.25rem;}
+.cgrid,.about-grid{grid-template-columns:1fr;gap:2rem;}
+.fg{grid-template-columns:1fr;}
+.ff{grid-column:1;}
+}
 </style>
 </head>
 <body>
-
 <nav>
-  <a href="#hero" class="nav-logo">
-    <svg height="48" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
-    <text x="260" y="44" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="600" fill="#2C2C2A" letter-spacing="4">The Weeknight</text>
-    <line x1="40" y1="36" x2="88" y2="36" stroke="#2C2C2A" stroke-width="0.8"/>
-    <line x1="432" y1="36" x2="480" y2="36" stroke="#2C2C2A" stroke-width="0.8"/>
-    <text x="260" y="128" text-anchor="middle" font-family="'Playfair Display',serif" font-size="72" font-weight="600" fill="#2C2C2A" letter-spacing="3">Kitchen</text>
-    <rect x="72" y="136" width="376" height="4" rx="2" fill="#C4714A"/>
-    <line x1="40" y1="168" x2="210" y2="168" stroke="#2A6B8A" stroke-width="0.8"/>
-    <line x1="310" y1="168" x2="480" y2="168" stroke="#2A6B8A" stroke-width="0.8"/>
-    <g transform="translate(260,168)"><line x1="0" y1="-14" x2="0" y2="14" stroke="#2A6B8A" stroke-width="1.8" stroke-linecap="round"/><line x1="-12.1" y1="-7" x2="12.1" y2="7" stroke="#2A6B8A" stroke-width="1.8" stroke-linecap="round"/><line x1="12.1" y1="-7" x2="-12.1" y2="7" stroke="#2A6B8A" stroke-width="1.8" stroke-linecap="round"/><circle cx="0" cy="-14" r="2.5" fill="#2A6B8A"/><circle cx="0" cy="14" r="2.5" fill="#2A6B8A"/><circle cx="-12.1" cy="-7" r="2.5" fill="#2A6B8A"/><circle cx="12.1" cy="7" r="2.5" fill="#2A6B8A"/><circle cx="12.1" cy="-7" r="2.5" fill="#2A6B8A"/><circle cx="-12.1" cy="7" r="2.5" fill="#2A6B8A"/></g>
-    <text x="260" y="210" text-anchor="middle" font-family="'Playfair Display',serif" font-size="26" font-weight="600" font-style="italic" fill="#2A6B8A" letter-spacing="1.5">fresh but frozen</text>
-    <path d="M58 204 Q50 197 60 193 Q56 199 64 204 Z" fill="#7A9E7E"/>
-    <path d="M462 204 Q470 197 460 193 Q464 199 456 204 Z" fill="#7A9E7E"/>
-    <text x="260" y="242" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="#A8A59E" letter-spacing="3.5">NORTH AUSTIN  ·  TX</text>
-  </svg>
-  </a>
-   <ul class="nav-links">
-    <li><a href="#how">How it works</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-  <a href="#order" class="nav-cta">Order now</a>
+<a href="#hero" class="nav-logo">
+<!-- FIXED: viewBox extended to 275, height increased to 62, location text enlarged, darkened, and corrected to full service area -->
+<svg height="62" viewBox="0 0 520 275" xmlns="http://www.w3.org/2000/svg">
+<text x="260" y="44" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="600" fill="#2C2C2A" letter-spacing="4">The Weeknight</text>
+<line x1="40" y1="36" x2="88" y2="36" stroke="#2C2C2A" stroke-width="0.8"/>
+<line x1="432" y1="36" x2="480" y2="36" stroke="#2C2C2A" stroke-width="0.8"/>
+<text x="260" y="128" text-anchor="middle" font-family="'Playfair Display',serif" font-size="72" font-weight="600" fill="#2C2C2A" letter-spacing="3">Kitchen</text>
+<rect x="72" y="136" width="376" height="4" rx="2" fill="#C4714A"/>
+<line x1="40" y1="168" x2="210" y2="168" stroke="#2A6B8A" stroke-width="0.8"/>
+<line x1="310" y1="168" x2="480" y2="168" stroke="#2A6B8A" stroke-width="0.8"/>
+<g transform="translate(260,168)"><line x1="0" y1="-14" x2="0" y2="14" stroke="#2A6B8A" stroke-width="1.8" stroke-linecap="round"/><line x1="-12.1" y1="-7" x2="12.1" y2="7" stroke="#2A6B8A" stroke-width="1.8" stroke-linecap="round"/><line x1="12.1" y1="-7" x2="-12.1" y2="7" stroke="#2A6B8A" stroke-width="1.8" stroke-linecap="round"/><circle cx="0" cy="-14" r="2.5" fill="#2A6B8A"/><circle cx="0" cy="14" r="2.5" fill="#2A6B8A"/><circle cx="-12.1" cy="-7" r="2.5" fill="#2A6B8A"/><circle cx="12.1" cy="7" r="2.5" fill="#2A6B8A"/><circle cx="12.1" cy="-7" r="2.5" fill="#2A6B8A"/><circle cx="-12.1" cy="7" r="2.5" fill="#2A6B8A"/></g>
+<text x="260" y="210" text-anchor="middle" font-family="'Playfair Display',serif" font-size="26" font-weight="600" font-style="italic" fill="#2A6B8A" letter-spacing="1.5">fresh but frozen</text>
+<path d="M58 204 Q50 197 60 193 Q56 199 64 204 Z" fill="#7A9E7E"/>
+<path d="M462 204 Q470 197 460 193 Q464 199 456 204 Z" fill="#7A9E7E"/>
+<text x="260" y="246" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="14" font-weight="500" fill="#6B6860" letter-spacing="3">NORTH AUSTIN · TEMPLE · BELTON AREA</text>
+</svg>
+</a>
+<ul class="nav-links">
+<li><a href="#how">How it works</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+<a href="#order" class="nav-cta">Order now</a>
 </nav>
 
 <section id="hero" style="padding-top:7rem;">
-  <div class="fu">
-    <div class="badge">NORTH AUSTIN · TEMPLE · BELTON · Freezer-ready meals</div>
-    <h1>Stock your freezer.<br><em>Eat well all month.</em></h1>
-    <p class="hero-desc">The same fresh, home-cooked meals you love — made in our local kitchen, frozen at peak freshness, delivered to your door. No weekly deadline, no rush.</p>
-    <div class="hero-actions">
-      <a href="#order" class="btn-p">Build my freezer bundle</a>
-      <a href="#menu" class="btn-s">See the menu →</a>
-    </div>
-    <div class="stats">
-      <div><div class="stat-n">3 mo</div><div class="stat-l">Freezer shelf life</div></div>
-      <div><div class="stat-n">10</div><div class="stat-l">Meals available</div></div>
-      <div><div class="stat-n">$90</div><div class="stat-l">Full bundle</div></div>
-    </div>
-  </div>
-  <div class="hero-v fu" style="transition-delay:.15s;">
-    <div class="hcard">
-      <div class="hcard-tag">Full freezer bundle</div>
-      <div class="hcard-title">Any 5 entrees · save $14</div>
-      <div class="hcard-sub">Mix & match any family entrees. Delivered frozen to your door.</div>
-      <div class="hcard-items">
-        <div class="hitem"><span>Lasagne al forno</span><span class="hprice">serves 4</span></div>
-        <div class="hitem"><span>Chicken enchiladas</span><span class="hprice">serves 4</span></div>
-        <div class="hitem"><span>Korean BBQ meatballs</span><span class="hprice">serves 4</span></div>
-        <div class="hitem"><span>+ more of your choice</span><span class="hprice" style="color:var(--terra);font-size:1.1rem;">$90</span></div>
-      </div>
-    </div>
-    <div class="hmini"><strong>Save $14</strong> vs buying individually. Order anytime — no weekly deadline.</div>
-  </div>
+<div class="fu">
+<div class="badge">NORTH AUSTIN · TEMPLE · BELTON · Freezer-ready meals</div>
+<h1>Stock your freezer.<br><em>Eat well all month.</em></h1>
+<p class="hero-desc">The same fresh, home-cooked meals you love — made in our local kitchen, frozen at peak freshness, delivered to your door. No weekly deadline, no rush.</p>
+<div class="hero-actions">
+<a href="#order" class="btn-p">Build my freezer bundle</a>
+<a href="#menu" class="btn-s">See the menu →</a>
+</div>
+<div class="stats">
+<div><div class="stat-n">3 mo</div><div class="stat-l">Freezer shelf life</div></div>
+<div><div class="stat-n">10</div><div class="stat-l">Meals available</div></div>
+<div><div class="stat-n">$90</div><div class="stat-l">Full bundle</div></div>
+</div>
+</div>
+<div class="hero-v fu" style="transition-delay:.15s;">
+<div class="hcard">
+<div class="hcard-tag">Full freezer bundle</div>
+<div class="hcard-title">Any 5 entrees · save $14</div>
+<div class="hcard-sub">Mix & match any family entrees. Delivered frozen to your door.</div>
+<div class="hcard-items">
+<div class="hitem"><span>Lasagne al forno</span><span class="hprice">serves 4</span></div>
+<div class="hitem"><span>Chicken enchiladas</span><span class="hprice">serves 4</span></div>
+<div class="hitem"><span>Korean BBQ meatballs</span><span class="hprice">serves 4</span></div>
+<div class="hitem"><span>+ more of your choice</span><span class="hprice" style="color:var(--terra);font-size:1.1rem;">$90</span></div>
+</div>
+</div>
+<div class="hmini"><strong>Save $14</strong> vs buying individually. Order anytime — no weekly deadline.</div>
+</div>
 </section>
 
 <section id="how">
-  <div class="si">
-    <div class="fu"><div class="ey">Simple process</div><h2>From our kitchen to your freezer</h2><p class="ssub">No weekly deadlines. Order whenever you need to restock.</p></div>
-    <div class="steps">
-      <div class="fu" style="transition-delay:.1s;"><div class="snum">01</div><div class="stitle">Pick your meals</div><div class="sdesc">Choose individual entrees or a bundle. Mix and match any family meals from the menu.</div></div>
-      <div class="fu" style="transition-delay:.2s;"><div class="snum">02</div><div class="stitle">We cook fresh</div><div class="sdesc">Every meal is made fresh in our home kitchen, cooled properly, then frozen at peak freshness.</div></div>
-      <div class="fu" style="transition-delay:.3s;"><div class="snum">03</div><div class="stitle">Delivered frozen</div><div class="sdesc">We deliver across North Austin, Temple, and Belton. Meals arrive frozen, ready for your freezer.</div></div>
-      <div class="fu" style="transition-delay:.4s;"><div class="snum">04</div><div class="stitle">Reheat any time</div><div class="sdesc">Every meal includes reheat instructions on the label. Most ready in 20–45 minutes. Good for 3 months frozen.</div></div>
-    </div>
-  </div>
+<div class="si">
+<div class="fu"><div class="ey">Simple process</div><h2>From our kitchen to your freezer</h2><p class="ssub">No weekly deadlines. Order whenever you need to restock.</p></div>
+<div class="steps">
+<div class="fu" style="transition-delay:.1s;"><div class="snum">01</div><div class="stitle">Pick your meals</div><div class="sdesc">Choose individual entrees or a bundle. Mix and match any family meals from the menu.</div></div>
+<div class="fu" style="transition-delay:.2s;"><div class="snum">02</div><div class="stitle">We cook fresh</div><div class="sdesc">Every meal is made fresh in our home kitchen, cooled properly, then frozen at peak freshness.</div></div>
+<div class="fu" style="transition-delay:.3s;"><div class="snum">03</div><div class="stitle">Delivered frozen</div><div class="sdesc">We deliver across North Austin, Temple, and Belton. Meals arrive frozen, ready for your freezer.</div></div>
+<div class="fu" style="transition-delay:.4s;"><div class="snum">04</div><div class="stitle">Reheat any time</div><div class="sdesc">Every meal includes reheat instructions on the label. Most ready in 20–45 minutes. Good for 3 months frozen.</div></div>
+</div>
+</div>
 </section>
 
 <section id="menu">
-  <div class="si">
-    <div class="fu"><div class="ey">Full menu</div><h2>What's in the freezer</h2><p class="ssub">All meals cooked fresh and frozen in our local kitchen. We operate under Texas cottage food law with full food handler certification and proper labeling on every order.</p></div>
-    <div class="mtabs">
-      <button class="mtab active" onclick="showM(this,'me')">Family entrees</button>
-      <button class="mtab" onclick="showM(this,'ms')">Single serve</button>
-      <button class="mtab" onclick="showM(this,'mb')">Bundles</button>
-    </div>
+<div class="si">
+<div class="fu"><div class="ey">Full menu</div><h2>What's in the freezer</h2><p class="ssub">All meals cooked fresh and frozen in our local kitchen. We operate under Texas cottage food law with full food handler certification and proper labeling on every order.</p></div>
+<div class="mtabs">
+<button class="mtab active" onclick="showM(this,'me')">Family entrees</button>
+<button class="mtab" onclick="showM(this,'ms')">Single serve</button>
+<button class="mtab" onclick="showM(this,'mb')">Bundles</button>
+</div>
 <div class="mpanel active" id="me">
 <div class="mc"><div class="mcat">Pasta</div><div class="mname">Lasagne Al Forno</div><div class="mdesc">Layers of ricotta, meat sauce & marinara. Reheats beautifully in 45 min.</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$30</span><span class="mserve">Serves 4 · ~$8 cost</span></div></div>
 <div class="mc"><div class="mcat">Pasta</div><div class="mname">Mac & Cheese</div><div class="mdesc">Combination of cheeses, layered in the dish as well as melted into a rich and creamy cheese sauce, for the ultimate in cheesy deliciousness!</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
@@ -245,167 +244,137 @@
 <div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">Chicken enchiladas</div><div class="mdesc">Braised chicken thighs, pepperjack cheese, tasty cilantro rice and charro beans rolled in corn tortillas.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbg">Specify heat level</span></div><div class="mfoot"><span class="mprice">$30</span><span class="mserve">Serves 4 · ~$8 cost</span></div></div>
 <div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">King ranch chicken</div><div class="mdesc">Shredded chicken, a zesty, creamy sauce, plenty of melty cheese, and tortillas all layered together in a casserole dish.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbb">Freezer-first</span><span class="mb mbg">Specify heat level</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
 <div class="mc"><div class="mcat">Comfort</div><div class="mname">Chicken & Rice</div><div class="mdesc">Baked seasoned chicken quarters with steamed rice.</div><div class="mbs"><span class="mb mbg">Classic</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
-    <div class="mc"><div class="mcat">Comfort</div><div class="mname">Pulled pork chili</div><div class="mdesc">Smoky, hearty, and loaded with flavor! This delicious chili is made with tender shredded pork, beans, tomatoes, and spices. Perfect for cozy nights in!</div><div class="mbs"><span class="mb mbg">High-protein</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
+<div class="mc"><div class="mcat">Comfort</div><div class="mname">Pulled pork chili</div><div class="mdesc">Smoky, hearty, and loaded with flavor! This delicious chili is made with tender shredded pork, beans, tomatoes, and spices. Perfect for cozy nights in!</div><div class="mbs"><span class="mb mbg">High-protein</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
 <div class="mc new"><div class="mcat">Asian</div><div class="mname">Korean BBQ meatballs over rice</div><div class="mdesc">Delicious meatballs with the sweet and savory flavors of Korean BBQ. Served over a bed of rice these Korean BBQ Meatballs make a delicious dinner, and re-heat really well for a quick weeknight dinner!</div><div class="mbs"><span class="mb mbg">Freezer-first</span><span class="mb mbb">High-protein</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
-<div class="mc new"><div class="mcat">Asian</div><div class="mname">Udon noodle stir fry with mushrooms</div><div class="mdesc">Fresh flavorful ingredients like green onions, garlic, ginger, and shiitake mushrooms, and a simple sauce made with basic Asian ingredients, you’ll love this plant-based recipe next time you have a craving for a big ol’ bowl of noodles!</div><div class="mbs"><span class="mb mbg">Plant-based</span><span class="mb mbb">High-protein</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div></div>
+<div class="mc new"><div class="mcat">Asian</div><div class="mname">Udon noodle stir fry with mushrooms</div><div class="mdesc">Fresh flavorful ingredients like green onions, garlic, ginger, and shiitake mushrooms, and a simple sauce made with basic Asian ingredients, you'll love this plant-based recipe next time you have a craving for a big ol' bowl of noodles!</div><div class="mbs"><span class="mb mbg">Plant-based</span><span class="mb mbb">High-protein</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
+</div>
 <div class="mpanel" id="ms">
 <div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Mac & Cheese single</div><div class="mdesc">Personal-size creamy baked mac. Microwave from frozen in 4 minutes.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbg">Kid-friendly</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
 <div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Chicken fried rice single</div><div class="mdesc">Wok-style rice with chicken, egg & vegetables. Perfect work lunch, ready in 4 min.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbb">Quick reheat</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
 <div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Chicken & Rice</div><div class="mdesc">Baked and perfectly seasoned chicken quarter with steamed rice. Microwave from frozen in 4 min.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbb">Quick reheat</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
 </div>
 <div class="mpanel" id="mb">
-      <div class="mc"><div class="mcat">Bundle</div><div class="mname">Freezer starter pack</div><div class="mdesc">Any 3 family entrees. Mix & match. Save $6 vs buying individually.</div><div class="mbs"><span class="mb mbb">Save $6</span><span class="mb mbg">Mix & match</span></div><div class="mfoot"><span class="mprice">$50</span><span class="mserve">3 entrees · serves 4 each</span></div></div>
-      <div class="mc" style="border:2px solid var(--ice-dark);"><div class="mcat">Bundle · most popular</div><div class="mname">Full freezer bundle</div><div class="mdesc">Any 5 family entrees. A full month of backup dinners. Save $14.</div><div class="mbs"><span class="mb mbb">Save $14</span><span class="mb mbb">Most popular</span></div><div class="mfoot"><span class="mprice">$90</span><span class="mserve">5 entrees · best value</span></div></div>
-    </div>
-  </div>
+<div class="mc"><div class="mcat">Bundle</div><div class="mname">Freezer starter pack</div><div class="mdesc">Any 3 family entrees. Mix & match. Save $6 vs buying individually.</div><div class="mbs"><span class="mb mbb">Save $6</span><span class="mb mbg">Mix & match</span></div><div class="mfoot"><span class="mprice">$50</span><span class="mserve">3 entrees · serves 4 each</span></div></div>
+<div class="mc" style="border:2px solid var(--ice-dark);"><div class="mcat">Bundle · most popular</div><div class="mname">Full freezer bundle</div><div class="mdesc">Any 5 family entrees. A full month of backup dinners. Save $14.</div><div class="mbs"><span class="mb mbb">Save $14</span><span class="mb mbb">Most popular</span></div><div class="mfoot"><span class="mprice">$90</span><span class="mserve">5 entrees · best value</span></div></div>
+</div>
+</div>
 </section>
 
 <section id="pricing">
-  <div class="si">
-    <div class="fu"><div class="ey">Straightforward pricing</div><h2>Order once, eat for a month.</h2><p class="ssub">No weekly commitments. Order when your freezer runs low. All meals labeled with reheat instructions and best-by date.</p></div>
-    <div class="pgrid">
-      <div class="pc fu" style="transition-delay:.1s;">
-        <div class="pey">Individual entrees</div><div class="pp">$18–30</div><div class="pper">per family entree · serves 4</div>
-        <ul class="pi"><li>Soups from $16</li><li>Casseroles & pasta $18–30</li><li>Protein bowls $18</li><li>Good for 3 months frozen</li></ul>
-        <a href="#order" class="pbtn">Order à la carte</a>
-      </div>
-      <div class="pc ft fu" style="transition-delay:.2s;">
-        <span class="pbadge">Best value</span>
-        <div class="pey">Full freezer bundle</div><div class="pp">$90</div><div class="pper">any 5 family entrees</div>
-        <ul class="pi"><li>5 family entrees (serves 4 each)</li><li>Mix & match any entrees</li><li>Save $14 vs individual</li><li>Free delivery on bundles</li><li>Good for 3 months frozen</li></ul>
-        <a href="#order" class="pbtn">Get the bundle</a>
-      </div>
-      <div class="pc fu" style="transition-delay:.3s;">
-        <div class="pey">Starter pack</div><div class="pp">$50</div><div class="pper">any 3 family entrees</div>
-        <ul class="pi"><li>Any 3 entrees from the menu</li><li>Save $6 vs individual</li><li>Great first order</li><li>Personal delivery</li></ul>
-        <a href="#order" class="pbtn">Start here</a>
-      </div>
-    </div>
-  </div>
+<div class="si">
+<div class="fu"><div class="ey">Straightforward pricing</div><h2>Order once, eat for a month.</h2><p class="ssub">No weekly commitments. Order when your freezer runs low. All meals labeled with reheat instructions and best-by date.</p></div>
+<div class="pgrid">
+<div class="pc fu" style="transition-delay:.1s;"><div class="pey">Individual entrees</div><div class="pp">$18–30</div><div class="pper">per family entree · serves 4</div><ul class="pi"><li>Soups from $16</li><li>Casseroles & pasta $18–30</li><li>Protein bowls $18</li><li>Good for 3 months frozen</li></ul><a href="#order" class="pbtn">Order à la carte</a></div>
+<div class="pc ft fu" style="transition-delay:.2s;"><span class="pbadge">Best value</span><div class="pey">Full freezer bundle</div><div class="pp">$90</div><div class="pper">any 5 family entrees</div><ul class="pi"><li>5 family entrees (serves 4 each)</li><li>Mix & match any entrees</li><li>Save $14 vs individual</li><li>Free delivery on bundles</li><li>Good for 3 months frozen</li></ul><a href="#order" class="pbtn">Get the bundle</a></div>
+<div class="pc fu" style="transition-delay:.3s;"><div class="pey">Starter pack</div><div class="pp">$50</div><div class="pper">any 3 family entrees</div><ul class="pi"><li>Any 3 entrees from the menu</li><li>Save $6 vs individual</li><li>Great first order</li><li>Personal delivery</li></ul><a href="#order" class="pbtn">Start here</a></div>
+</div>
+</div>
 </section>
 
 <section id="compare">
-  <div class="si">
-    <div class="fu"><div class="ey">Two ways to order</div><h2>Fresh weekly or frozen anytime.</h2><p class="ssub">Many families do both — fresh weekly bundles during normal weeks, frozen backup for travel and busy stretches.</p></div>
-    <div class="cgrid fu" style="transition-delay:.1s;">
-      <div class="ccard hi">
-        <span class="ctag ctb">Fresh but frozen</span>
-        <div class="ctitle">Freezer meals</div>
-        <div class="cdesc">Cook fresh, freeze immediately. No weekly deadline. Stock up once and eat well all month.</div>
-        <ul class="clist"><li>Order anytime — no deadline</li><li>3-month freezer shelf life</li><li>Bulk savings on bundles</li><li>Perfect backup for busy weeks</li><li>$14–90 per order</li></ul>
-      </div>
-      <div class="ccard">
-        <span class="ctag ctt">Fresh weekly</span>
-        <div class="ctitle">Weekly dinner bundle</div>
-        <div class="cdesc">Five fresh dinners delivered every Wednesday. Order by Sunday noon. New menu every week.</div>
-        <ul class="clist"><li>Order by Sunday, delivered Wednesday</li><li>Fridge shelf life 4–5 days</li><li>New menu every week</li><li>Best for regular weekly families</li><li>$50 per week</li></ul>
-      </div>
-    </div>
-  </div>
+<div class="si">
+<div class="fu"><div class="ey">Two ways to order</div><h2>Fresh weekly or frozen anytime.</h2><p class="ssub">Many families do both — fresh weekly bundles during normal weeks, frozen backup for travel and busy stretches.</p></div>
+<div class="cgrid fu" style="transition-delay:.1s;">
+<div class="ccard hi"><span class="ctag ctb">Fresh but frozen</span><div class="ctitle">Freezer meals</div><div class="cdesc">Cook fresh, freeze immediately. No weekly deadline. Stock up once and eat well all month.</div><ul class="clist"><li>Order anytime — no deadline</li><li>3-month freezer shelf life</li><li>Bulk savings on bundles</li><li>Perfect backup for busy weeks</li><li>$14–90 per order</li></ul></div>
+<div class="ccard"><span class="ctag ctt">Fresh weekly</span><div class="ctitle">Weekly dinner bundle</div><div class="cdesc">Five fresh dinners delivered every Wednesday. Order by Sunday noon. New menu every week.</div><ul class="clist"><li>Order by Sunday, delivered Wednesday</li><li>Fridge shelf life 4–5 days</li><li>New menu every week</li><li>Best for regular weekly families</li><li>$50 per week</li></ul></div>
+</div>
+</div>
 </section>
 
 <section id="about">
-  <div class="about-grid">
-    <div class="fu">
-      <div class="ey">Who we are</div>
-      <h2>Real food, made by a real neighbor.</h2>
-      <p class="ssub">The Weeknight Kitchen started because weeknight dinners were stressing our family out — and we figured we weren't alone.</p>
-      <div class="values">
-        <div class="value"><div class="vdot"></div><div><div class="vtitle">Serving North Austin, Temple & Belton</div><div class="vdesc">Everything is made fresh in our home kitchen using quality local ingredients. We deliver across North Austin, Temple, and Belton.</div></div></div>
-        <div class="value"><div class="vdot"></div><div><div class="vtitle">Cottage food certified</div><div class="vdesc">We operate under Texas cottage food law with full food handler certification and proper labeling on every order.</div></div></div>
-        <div class="value"><div class="vdot"></div><div><div class="vtitle">Personally delivered</div><div class="vdesc">We hand-deliver every order ourselves — no third-party couriers, no missing bags.</div></div></div>
-      </div>
-    </div>
-    <div class="about-card fu" style="transition-delay:.15s;">
-      <div class="about-avatar">WK</div>
-      <div class="about-quote">"I started this so families in North Austin, Temple, and Belton could have one less thing to worry about at the end of a long day."</div>
-      <div class="about-name">The Weeknight Kitchen</div>
-      <div class="about-sub">North Austin · Temple · Belton · Cottage food certified</div>
-    </div>
-  </div>
+<div class="about-grid">
+<div class="fu">
+<div class="ey">Who we are</div>
+<h2>Real food, made by a real neighbor.</h2>
+<p class="ssub">The Weeknight Kitchen started because weeknight dinners were stressing our family out — and we figured we weren't alone.</p>
+<div class="values">
+<div class="value"><div class="vdot"></div><div><div class="vtitle">Serving North Austin, Temple & Belton</div><div class="vdesc">Everything is made fresh in our home kitchen using quality local ingredients. We deliver across North Austin, Temple, and Belton.</div></div></div>
+<div class="value"><div class="vdot"></div><div><div class="vtitle">Cottage food certified</div><div class="vdesc">We operate under Texas cottage food law with full food handler certification and proper labeling on every order.</div></div></div>
+<div class="value"><div class="vdot"></div><div><div class="vtitle">Personally delivered</div><div class="vdesc">We hand-deliver every order ourselves — no third-party couriers, no missing bags.</div></div></div>
+</div>
+</div>
+<div class="about-card fu" style="transition-delay:.15s;">
+<div class="about-avatar">WK</div>
+<div class="about-quote">"I started this so families in North Austin, Temple, and Belton could have one less thing to worry about at the end of a long day."</div>
+<div class="about-name">The Weeknight Kitchen</div>
+<div class="about-sub">North Austin · Temple · Belton · Cottage food certified</div>
+</div>
+</div>
 </section>
 
 <section id="order">
-  <div class="si">
-    <div class="fw fu">
-      <div class="ey">Place your order</div>
-      <h2>Build your freezer bundle.</h2>
-      <p class="ssub">Fill out the form and we'll confirm within a few hours with a total and delivery date.</p>
-      <form class="fg" name="frozen-orders" method="POST"
-        data-netlify="true" data-netlify-honeypot="bot-field"
-        action="/thank-you.html">
-        <input type="hidden" name="form-name" value="frozen-orders">
-        <p style="display:none;"><input name="bot-field"></p>
-        <div class="fgrp"><label class="flbl">First name</label><input class="fi" type="text" name="first-name" placeholder="Maria" required></div>
-        <div class="fgrp"><label class="flbl">Last name</label><input class="fi" type="text" name="last-name" placeholder="Garcia"></div>
-        <div class="fgrp ff"><label class="flbl">Email address</label><input class="fi" type="email" name="email" placeholder="maria@email.com" required></div>
-        <div class="fgrp ff"><label class="flbl">Delivery address</label><input class="fi" type="text" name="address" placeholder="123 Main St, North Austin TX" required></div>
-        <div class="fgrp ff">
-          <label class="flbl">What would you like to order?</label>
-          <select class="fs" name="bundle" required>
-            <option value="">Choose an option...</option>
-            <option>Full freezer bundle — $90 (any 5 entrees)</option>
-            <option>Starter pack — $50 (any 3 entrees)</option>
-            <option>Individual entrees — I'll list below</option>
-            <option>Mix of frozen + weekly fresh bundle</option>
-          </select>
-        </div>
-        <div class="fgrp ff"><label class="flbl">Specific meals or notes</label><textarea class="fta" name="notes" placeholder="List your entree choices, dietary needs, Tex-mex spice level, gate codes, etc."></textarea></div>
-        <div class="ff">
-          <button class="fbtn" type="submit">Send my order request</button>
-          <p class="fnote">We'll reply within a few hours to confirm meals, total, and delivery date. First frozen order? Mention it and we'll throw in a free single-serve meal.</p>
-        </div>
-      </form>
-    </div>
-  </div>
+<div class="si">
+<div class="fw fu">
+<div class="ey">Place your order</div>
+<h2>Build your freezer bundle.</h2>
+<p class="ssub">Fill out the form and we'll confirm within a few hours with a total and delivery date.</p>
+<form class="fg" name="frozen-orders" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+<input type="hidden" name="form-name" value="frozen-orders">
+<p style="display:none;"><input name="bot-field"></p>
+<div class="fgrp"><label class="flbl">First name</label><input class="fi" type="text" name="first-name" placeholder="Maria" required></div>
+<div class="fgrp"><label class="flbl">Last name</label><input class="fi" type="text" name="last-name" placeholder="Garcia"></div>
+<div class="fgrp ff"><label class="flbl">Email address</label><input class="fi" type="email" name="email" placeholder="maria@email.com" required></div>
+<div class="fgrp ff"><label class="flbl">Delivery address</label><input class="fi" type="text" name="address" placeholder="123 Main St, North Austin TX" required></div>
+<div class="fgrp ff">
+<label class="flbl">What would you like to order?</label>
+<select class="fs" name="bundle" required>
+<option value="">Choose an option...</option>
+<option>Full freezer bundle — $90 (any 5 entrees)</option>
+<option>Starter pack — $50 (any 3 entrees)</option>
+<option>Individual entrees — I'll list below</option>
+<option>Mix of frozen + weekly fresh bundle</option>
+</select>
+</div>
+<div class="fgrp ff"><label class="flbl">Specific meals or notes</label><textarea class="fta" name="notes" placeholder="List your entree choices, dietary needs, Tex-mex spice level, gate codes, etc."></textarea></div>
+<div class="ff">
+<button class="fbtn" type="submit">Send my order request</button>
+<p class="fnote">We'll reply within a few hours to confirm meals, total, and delivery date. First frozen order? Mention it and we'll throw in a free single-serve meal.</p>
+</div>
+</form>
+</div>
+</div>
 </section>
 
 <footer>
-  <div style="margin-bottom:1rem;">
-    <svg height="64" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
-    <text x="260" y="44" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="600" fill="#7A9E7E" letter-spacing="4">The Weeknight</text>
-    <line x1="40" y1="36" x2="88" y2="36" stroke="#7A9E7E" stroke-width="0.8"/>
-    <line x1="432" y1="36" x2="480" y2="36" stroke="#7A9E7E" stroke-width="0.8"/>
-    <text x="260" y="128" text-anchor="middle" font-family="'Playfair Display',serif" font-size="72" font-weight="600" fill="#FAF7F2" letter-spacing="3">Kitchen</text>
-    <rect x="72" y="136" width="376" height="4" rx="2" fill="#C4714A"/>
-    <line x1="40" y1="168" x2="210" y2="168" stroke="#7A9E7E" stroke-width="0.7"/>
-    <line x1="310" y1="168" x2="480" y2="168" stroke="#7A9E7E" stroke-width="0.7"/>
-    <g transform="translate(260,168)"><line x1="0" y1="-14" x2="0" y2="14" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round"/><line x1="-12.1" y1="-7" x2="12.1" y2="7" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round"/><line x1="12.1" y1="-7" x2="-12.1" y2="7" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round"/><circle cx="0" cy="-14" r="2.5" fill="#7A9E7E"/><circle cx="0" cy="14" r="2.5" fill="#7A9E7E"/><circle cx="-12.1" cy="-7" r="2.5" fill="#7A9E7E"/><circle cx="12.1" cy="7" r="2.5" fill="#7A9E7E"/><circle cx="12.1" cy="-7" r="2.5" fill="#7A9E7E"/><circle cx="-12.1" cy="7" r="2.5" fill="#7A9E7E"/></g>
-    <text x="260" y="210" text-anchor="middle" font-family="'Playfair Display',serif" font-size="26" font-weight="600" font-style="italic" fill="#7A9E7E" letter-spacing="1.5">fresh but frozen</text>
-    <path d="M58 204 Q50 197 60 193 Q56 199 64 204 Z" fill="#7A9E7E" opacity="0.6"/>
-    <path d="M462 204 Q470 197 460 193 Q464 199 456 204 Z" fill="#7A9E7E" opacity="0.6"/>
-    <text x="260" y="242" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11" font-weight="500" fill="rgba(250,247,242,0.3)" letter-spacing="3.5">NORTH AUSTIN · TEMPLE · BELTON</text>
-  </svg>
-  </div>
-  <p style="margin-bottom:0.4rem;color:rgba(250,247,242,0.5);">Made in a home kitchen · Serving North Austin, Temple &amp; Belton · Cottage food certified</p>
-  <div style="margin-top:1rem;">
-    <a href="https://www.facebook.com/profile.php?id=61578468008112" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:8px;color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.85rem;font-family:'DM Sans',sans-serif;font-weight:500;transition:color 0.2s;"
-      onmouseover="this.style.color='rgba(250,247,242,1)'" onmouseout="this.style.color='rgba(250,247,242,0.6)'">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(250,247,242,0.7)" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-      </svg>
-      Follow us on Facebook
-    </a>
-    <span style="color:rgba(250,247,242,0.2);margin:0 0.5rem;">|</span>
-    <a href="https://www.instagram.com/freezer.ready.meals" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:8px;color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.85rem;font-family:'DM Sans',sans-serif;font-weight:500;transition:color 0.2s;"
-      onmouseover="this.style.color='rgba(250,247,242,1)'" onmouseout="this.style.color='rgba(250,247,242,0.6)'">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(250,247,242,0.7)" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-      </svg>
-      Follow us on Instagram
-    </a>
-  </div>
+<div style="margin-bottom:1rem;">
+<!-- FIXED: viewBox extended to 275, height increased to 80, location text enlarged, brightened, and corrected -->
+<svg height="80" viewBox="0 0 520 275" xmlns="http://www.w3.org/2000/svg">
+<text x="260" y="44" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="600" fill="#7A9E7E" letter-spacing="4">The Weeknight</text>
+<line x1="40" y1="36" x2="88" y2="36" stroke="#7A9E7E" stroke-width="0.8"/>
+<line x1="432" y1="36" x2="480" y2="36" stroke="#7A9E7E" stroke-width="0.8"/>
+<text x="260" y="128" text-anchor="middle" font-family="'Playfair Display',serif" font-size="72" font-weight="600" fill="#FAF7F2" letter-spacing="3">Kitchen</text>
+<rect x="72" y="136" width="376" height="4" rx="2" fill="#C4714A"/>
+<line x1="40" y1="168" x2="210" y2="168" stroke="#7A9E7E" stroke-width="0.7"/>
+<line x1="310" y1="168" x2="480" y2="168" stroke="#7A9E7E" stroke-width="0.7"/>
+<g transform="translate(260,168)"><line x1="0" y1="-14" x2="0" y2="14" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round"/><line x1="-12.1" y1="-7" x2="12.1" y2="7" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round"/><line x1="12.1" y1="-7" x2="-12.1" y2="7" stroke="#7A9E7E" stroke-width="1.8" stroke-linecap="round"/><circle cx="0" cy="-14" r="2.5" fill="#7A9E7E"/><circle cx="0" cy="14" r="2.5" fill="#7A9E7E"/><circle cx="-12.1" cy="-7" r="2.5" fill="#7A9E7E"/><circle cx="12.1" cy="7" r="2.5" fill="#7A9E7E"/><circle cx="12.1" cy="-7" r="2.5" fill="#7A9E7E"/><circle cx="-12.1" cy="7" r="2.5" fill="#7A9E7E"/></g>
+<text x="260" y="210" text-anchor="middle" font-family="'Playfair Display',serif" font-size="26" font-weight="600" font-style="italic" fill="#7A9E7E" letter-spacing="1.5">fresh but frozen</text>
+<path d="M58 204 Q50 197 60 193 Q56 199 64 204 Z" fill="#7A9E7E" opacity="0.6"/>
+<path d="M462 204 Q470 197 460 193 Q464 199 456 204 Z" fill="#7A9E7E" opacity="0.6"/>
+<text x="260" y="246" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="14" font-weight="500" fill="rgba(250,247,242,0.8)" letter-spacing="3">NORTH AUSTIN · TEMPLE · BELTON AREA</text>
+</svg>
+</div>
+<p style="margin-bottom:0.4rem;color:rgba(250,247,242,0.5);">Made in a home kitchen · Serving North Austin, Temple & Belton · Cottage food certified</p>
+<div style="margin-top:1rem;">
+<a href="https://www.facebook.com/profile.php?id=61578468008112" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.85rem;font-family:'DM Sans',sans-serif;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='rgba(250,247,242,1)'" onmouseout="this.style.color='rgba(250,247,242,0.6)'">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(250,247,242,0.7)" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+Follow us on Facebook
+</a>
+<span style="color:rgba(250,247,242,0.2);margin:0 0.5rem;">|</span>
+<a href="https://www.instagram.com/freezer.ready.meals" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.85rem;font-family:'DM Sans',sans-serif;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='rgba(250,247,242,1)'" onmouseout="this.style.color='rgba(250,247,242,0.6)'">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(250,247,242,0.7)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+Follow us on Instagram
+</a>
+</div>
 </footer>
+
 <script>
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.12});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 function showM(btn,id){
-  document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));
+document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+btn.classList.add('active');
 }
 </script>
 </body>
