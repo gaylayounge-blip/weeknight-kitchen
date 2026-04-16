@@ -155,6 +155,25 @@ section{padding:3.5rem 1.25rem;}
 .fg{grid-template-columns:1fr;}
 .ff{grid-column:1;}
 }
+  /* ── Testimonials Section ─────────────────────────────────── */
+  .testimonials{background-color:#FDF8F4;padding:72px 24px;text-align:center;}
+  .testimonials-label{font-size:.78rem;font-weight:600;letter-spacing:.18em;color:#C4714A;text-transform:uppercase;margin-bottom:10px;}
+  .testimonials h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#2C2C2A;margin:0 0 12px;}
+  .testimonials .section-sub{font-size:1rem;color:#A8A59E;margin-bottom:52px;}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;max-width:960px;margin:0 auto 48px;}
+  .review-card{background:#ffffff;border-radius:16px;padding:36px 32px 28px;box-shadow:0 2px 16px rgba(44,44,42,0.07);text-align:left;position:relative;border-top:4px solid #C4714A;transition:transform .2s ease,box-shadow .2s ease;}
+  .review-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(44,44,42,0.12);}
+  .review-stars{color:#D4AA50;font-size:1.2rem;letter-spacing:2px;margin-bottom:16px;}
+  .review-quote{font-size:1rem;line-height:1.75;color:#2C2C2A;font-style:italic;margin-bottom:24px;position:relative;}
+  .review-quote::before{content:"\201C";font-size:3.5rem;color:#C4714A;line-height:0;vertical-align:-0.6em;margin-right:4px;font-style:normal;}
+  .review-divider{width:48px;height:2px;background:#C4714A;margin-bottom:16px;}
+  .review-author strong{display:block;font-size:.95rem;color:#2C2C2A;font-weight:700;margin-bottom:2px;}
+  .review-author span{font-size:.8rem;color:#A8A59E;}
+  .review-source{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:.75rem;color:#A8A59E;font-weight:500;}
+  .review-source svg{width:14px;height:14px;fill:#1877F2;}
+  .testimonials-cta{font-size:.9rem;color:#A8A59E;}
+  .testimonials-cta a{color:#C4714A;font-weight:600;text-decoration:none;}
+  .testimonials-cta a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -181,6 +200,7 @@ section{padding:3.5rem 1.25rem;}
 <li><a href="#menu">Menu</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#reviews">Reviews</a></li>
 </ul>
 <a href="#order" class="nav-cta">Order now</a>
 </nav>
@@ -196,7 +216,7 @@ section{padding:3.5rem 1.25rem;}
 </div>
 <div class="stats">
 <div><div class="stat-n">3 mo</div><div class="stat-l">Freezer shelf life</div></div>
-<div><div class="stat-n">12</div><div class="stat-l">Meals available</div></div>
+<div><div class="stat-n">10</div><div class="stat-l">Meals available</div></div>
 <div><div class="stat-n">$90</div><div class="stat-l">Full bundle</div></div>
 </div>
 </div>
@@ -237,24 +257,21 @@ section{padding:3.5rem 1.25rem;}
 <button class="mtab" onclick="showM(this,'mb')">Bundles</button>
 </div>
 <div class="mpanel active" id="me">
-<div class="mc"><div class="mcat">Pasta</div><div class="mname">Lasagne al forno</div><div class="mdesc">Layers of ricotta, meat sauce & marinara. Reheats beautifully in 45 min.</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$30</span><span class="mserve">Serves 4 · ~$8 cost</span></div></div>
-<div class="mc"><div class="mcat">Pasta</div><div class="mname">Creamy lemon chicken piccata</div><div class="mdesc">Tender chicken cutlets, lightly breaded and served in a mouthwatering lemon cream sauce with capers and shallots. Served over creamy mashed potatoes and ready in about 30 minutes!</div><div class="mbs"><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
+<div class="mc"><div class="mcat">Pasta</div><div class="mname">Lasagne Al Forno</div><div class="mdesc">Layers of ricotta, meat sauce & marinara. Reheats beautifully in 45 min.</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$30</span><span class="mserve">Serves 4 · ~$8 cost</span></div></div>
+<div class="mc"><div class="mcat">Pasta</div><div class="mname">Mac & Cheese</div><div class="mdesc">Combination of cheeses, layered in the dish as well as melted into a rich and creamy cheese sauce, for the ultimate in cheesy deliciousness!</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
 <div class="mc"><div class="mcat">Pasta</div><div class="mname">Hearty penne bolognese with meatballs</div><div class="mdesc">Dreamy baked penne with meatballs. The base of this baby is a velvety, savory, garlic-heavy tomato and butter sauce, which is just the right amount of clingy for those hearty whole wheat penne noodles. And the meatballs, spinach, and Parmesan round the whole thing out into a one-and-done type meal.</div><div class="mbs"><span class="mb mbg">High-protein</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
 <div class="mc"><div class="mcat">Pasta</div><div class="mname">Chicken and broccoli pasta bake</div><div class="mdesc">Chicken, broccoli, and noodles all smothered in a creamy sauce, baked together in the oven to make it warm and bubbly!</div><div class="mbs"><span class="mb mbg">Kid-friendly</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
-<!-- FIXED: enchiladas image height increased from 160px to 240px for better display -->
-<div class="mc" style="padding:0;overflow:hidden;"><img src="chicken-enchillidas-prebake.jpg" alt="Enchiladas pre-bake" style="width:100%;height:240px;object-fit:cover;object-position:center top;display:block;"><div style="padding:1.25rem;"><div class="mcat">Tex-Mex</div><div class="mname">Chicken enchiladas</div><div class="mdesc">Braised chicken thighs, pepperjack cheese, tasty cilantro rice and charro beans rolled in corn tortillas.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbg">Specify heat level</span></div><div class="mfoot"><span class="mprice">$30</span><span class="mserve">Serves 4 · ~$8 cost</span></div></div></div>
-<div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">Beef enchilada casserole</div><div class="mdesc">Our new weeknight staple! Ground beef mixed with red enchilada sauce, layered with rice, tortillas, peppers, and charro beans. Everything bakes together in one dish with bubbling and delicious cheese on top.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbg">Specify heat level</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
+<div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">Chicken enchiladas</div><div class="mdesc">Braised chicken thighs, pepperjack cheese, tasty cilantro rice and charro beans rolled in corn tortillas.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbg">Specify heat level</span></div><div class="mfoot"><span class="mprice">$30</span><span class="mserve">Serves 4 · ~$8 cost</span></div></div>
 <div class="mc"><div class="mcat">Tex-Mex</div><div class="mname">King ranch chicken</div><div class="mdesc">Shredded chicken, a zesty, creamy sauce, plenty of melty cheese, and tortillas all layered together in a casserole dish.</div><div class="mbs"><span class="mb mba">Tex-Mex</span><span class="mb mbb">Freezer-first</span><span class="mb mbg">Specify heat level</span></div><div class="mfoot"><span class="mprice">$25</span><span class="mserve">Serves 4 · ~$6 cost</span></div></div>
-<div class="mc"><div class="mcat">Comfort</div><div class="mname">Chicken & rice</div><div class="mdesc">Baked seasoned chicken quarters with steamed rice.</div><div class="mbs"><span class="mb mbg">Classic</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
-<div class="mc"><div class="mcat">Comfort</div><div class="mname">Salisbury steak with mushroom gravy</div><div class="mdesc">A giant meatball, formed flat like a steak and pan-seared, smothered in a thick mushroom gravy, served with creamy mashed potatoes and is a fast, easy, comfort food to make in only 30 minutes!</div><div class="mbs"><span class="mb mbg">Classic</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
+<div class="mc"><div class="mcat">Comfort</div><div class="mname">Chicken & Rice</div><div class="mdesc">Baked seasoned chicken quarters with steamed rice.</div><div class="mbs"><span class="mb mbg">Classic</span><span class="mb mbb">Best seller</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
 <div class="mc"><div class="mcat">Comfort</div><div class="mname">Pulled pork chili</div><div class="mdesc">Smoky, hearty, and loaded with flavor! This delicious chili is made with tender shredded pork, beans, tomatoes, and spices. Perfect for cozy nights in!</div><div class="mbs"><span class="mb mbg">High-protein</span><span class="mb mbb">Freezer-first</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
 <div class="mc new"><div class="mcat">Asian</div><div class="mname">Korean BBQ meatballs over rice</div><div class="mdesc">Delicious meatballs with the sweet and savory flavors of Korean BBQ. Served over a bed of rice these Korean BBQ Meatballs make a delicious dinner, and re-heat really well for a quick weeknight dinner!</div><div class="mbs"><span class="mb mbg">Freezer-first</span><span class="mb mbb">High-protein</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
 <div class="mc new"><div class="mcat">Asian</div><div class="mname">Udon noodle stir fry with mushrooms</div><div class="mdesc">Fresh flavorful ingredients like green onions, garlic, ginger, and shiitake mushrooms, and a simple sauce made with basic Asian ingredients, you'll love this plant-based recipe next time you have a craving for a big ol' bowl of noodles!</div><div class="mbs"><span class="mb mbg">Plant-based</span><span class="mb mbb">High-protein</span></div><div class="mfoot"><span class="mprice">$20</span><span class="mserve">Serves 4 · ~$5 cost</span></div></div>
 </div>
 <div class="mpanel" id="ms">
 <div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Mac & Cheese single</div><div class="mdesc">Personal-size creamy baked mac. Microwave from frozen in 4 minutes.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbg">Kid-friendly</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
-<div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Beef and broccoli stir fry single</div><div class="mdesc">Stir fry classic dish of beef sauteed with fresh broccoli florets and coated in a savory sauce, ready in 4 minutes.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbb">Quick reheat</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
-<div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Chicken & rice single</div><div class="mdesc">Baked and perfectly seasoned chicken quarter with steamed rice. Microwave from frozen in 4 min.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbb">Quick reheat</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
+<div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Chicken fried rice single</div><div class="mdesc">Wok-style rice with chicken, egg & vegetables. Perfect work lunch, ready in 4 min.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbb">Quick reheat</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
+<div class="mc"><div class="mcat">Lunch / dinner</div><div class="mname">Chicken & Rice</div><div class="mdesc">Baked and perfectly seasoned chicken quarter with steamed rice. Microwave from frozen in 4 min.</div><div class="mbs"><span class="mb mbp">Single serve</span><span class="mb mbb">Quick reheat</span></div><div class="mfoot"><span class="mprice">$7</span><span class="mserve">Serves 1–2 · ~$2 cost</span></div></div>
 </div>
 <div class="mpanel" id="mb">
 <div class="mc"><div class="mcat">Bundle</div><div class="mname">Freezer starter pack</div><div class="mdesc">Any 3 family entrees. Mix & match. Save $6 vs buying individually.</div><div class="mbs"><span class="mb mbb">Save $6</span><span class="mb mbg">Mix & match</span></div><div class="mfoot"><span class="mprice">$50</span><span class="mserve">3 entrees · serves 4 each</span></div></div>
@@ -303,6 +320,44 @@ section{padding:3.5rem 1.25rem;}
 <div class="about-sub">North Austin · Temple · Belton · Cottage food certified</div>
 </div>
 </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <p class="testimonials-label">What Neighbors Are Saying</p>
+  <h2>Real Reviews from Real Families ⭐</h2>
+  <p class="section-sub">Don't take our word for it — here's what our customers think.</p>
+  <div class="testimonials-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-quote">Each dish I've gotten has been seriously well made and thoughtfully curated to fit into my hectic schedule! From piano lessons to this wild baseball season, I've been on the go, go, go and I can't express how much I needed this amazing service.</p>
+      <div class="review-divider"></div>
+      <div class="review-author">
+        <strong>Swayla S.</strong>
+        <span>Verified Customer &nbsp;·&nbsp; Great food</span>
+      </div>
+      <div class="review-source">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        Facebook Review · April 11, 2026
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-quote">We absolutely love The Weeknight Kitchen! Every meal we've tried has been amazing. It makes busy evenings so much easier — just let it thaw, pop it in the oven when I get home, and dinner is ready in no time. The portions are generous too, which means we usually have leftovers for the next day (always a win!). It truly feels like a home-cooked meal without all the stress. Highly recommend for any family!</p>
+      <div class="review-divider"></div>
+      <div class="review-author">
+        <strong>Maribeth P.</strong>
+        <span>Verified Customer &nbsp;·&nbsp; Creative cuisine · Great food</span>
+      </div>
+      <div class="review-source">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        Facebook Review · April 4, 2026
+      </div>
+    </div>
+  </div>
+  <p class="testimonials-cta">
+    Love The Weeknight Kitchen? &nbsp;
+    <a href="https://www.facebook.com/TheWeeknightChief/reviews/" target="_blank">Leave us a review on Facebook ↗</a>
+  </p>
 </section>
 
 <section id="order">
