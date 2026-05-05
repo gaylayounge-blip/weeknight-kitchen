@@ -155,6 +155,42 @@ section{padding:3.5rem 1.25rem;}
 .fg{grid-template-columns:1fr;}
 .ff{grid-column:1;}
 }
+/* ── Lunch Delivery Program ─────────────────────────────────────────── */
+#lunch{background:var(--ice);}
+#lunch .ey{color:var(--ice-dark);}
+.lsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1.5rem;margin-bottom:2.75rem;}
+.lstep{display:flex;gap:.9rem;align-items:flex-start;}
+.lnum{width:30px;height:30px;border-radius:50%;background:var(--ice-dark);color:#fff;font-family:'Playfair Display',serif;font-size:.95rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.lstitle{font-size:.92rem;font-weight:500;margin-bottom:.25rem;color:var(--charcoal);}
+.lsdesc{font-size:.82rem;color:var(--mid);line-height:1.6;}
+.lprice-band{background:var(--charcoal);border-radius:1.5rem;padding:1.75rem 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem;}
+.lp-item{text-align:center;}
+.lp-amt{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;line-height:1;}
+.lp-label{font-size:.72rem;color:rgba(250,247,242,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:5px;}
+.lpay{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;}
+.lpay-row{display:flex;align-items:baseline;gap:.75rem;font-size:.88rem;}
+.lpay-method{font-weight:500;color:var(--charcoal);min-width:76px;}
+.lpay-val{color:var(--mid);}
+#lunch-menu-tabs{display:flex;gap:8px;margin-bottom:1.25rem;}
+.lmtab{font-size:.82rem;font-weight:500;padding:6px 18px;border-radius:2rem;cursor:pointer;border:1px solid var(--border);color:var(--mid);background:transparent;transition:all .15s;}
+.lmtab.active{background:var(--ice-dark);color:#fff;border-color:var(--ice-dark);}
+.lmpanel{display:none;}
+.lmpanel.active{display:block;}
+.lmtable{width:100%;border-collapse:collapse;font-size:.875rem;border-radius:.75rem;overflow:hidden;}
+.lmtable th{background:var(--charcoal);color:var(--cream);padding:.65rem 1rem;text-align:left;font-weight:500;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;}
+.lmtable td{padding:.7rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.lmtable tr:nth-child(even) td{background:rgba(42,107,138,.06);}
+.lmtable tr:last-child td{border-bottom:none;}
+.lm-day{font-weight:600;color:var(--charcoal);white-space:nowrap;}
+.lm-meal{color:var(--charcoal);}
+.lm-sides{font-size:.8rem;color:var(--mid);}
+.lm-note{font-size:.78rem;color:var(--mid);font-style:italic;margin-top:.9rem;line-height:1.6;}
+.lunch-cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:2.5rem;}
+@media(max-width:768px){
+  .lprice-band{grid-template-columns:1fr;gap:1rem;}
+  .lunch-cta-grid{grid-template-columns:1fr;}
+  .lmtable th:last-child,.lmtable td:last-child{display:none;}
+}
   /* ── Testimonials Section ─────────────────────────────────── */
   .testimonials{background-color:#FDF8F4;padding:72px 24px;text-align:center;}
   .testimonials-label{font-size:.78rem;font-weight:600;letter-spacing:.18em;color:#C4714A;text-transform:uppercase;margin-bottom:10px;}
@@ -198,6 +234,7 @@ section{padding:3.5rem 1.25rem;}
 <ul class="nav-links">
 <li><a href="#how">How it works</a></li>
 <li><a href="#menu">Menu</a></li>
+<li><a href="#lunch">Lunch Program</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#reviews">Reviews</a></li>
@@ -283,6 +320,57 @@ section{padding:3.5rem 1.25rem;}
 </div>
 </section>
 
+<section id="lunch">
+<div class="si">
+  <div class="fu">
+    <div class="ey">New · Monday Delivery</div>
+    <h2>Lunch Delivery Program</h2>
+    <p class="ssub">Five fresh lunches prepped every Monday and delivered to your door by 11:30&nbsp;AM. Refrigerate, reheat, and enjoy — no stress, no mess, no planning required.</p>
+  </div>
+  <div class="lsteps fu" style="transition-delay:.1s;">
+    <div class="lstep"><div class="lnum">1</div><div><div class="lstitle">Sign up for your block</div><div class="lsdesc">Choose a week from the rotating 2-week menu and reserve your spot.</div></div></div>
+    <div class="lstep"><div class="lnum">2</div><div><div class="lstitle">Pay by Friday</div><div class="lsdesc">Payment due by Friday before your delivery week via Zelle, Cash App, or Apple Pay.</div></div></div>
+    <div class="lstep"><div class="lnum">3</div><div><div class="lstitle">We prep Monday morning</div><div class="lsdesc">All 5 lunches made fresh in our home kitchen the morning of delivery.</div></div></div>
+    <div class="lstep"><div class="lnum">4</div><div><div class="lstitle">Delivered by 11:30 AM</div><div class="lsdesc">Lunches arrive at your door — refrigerate immediately upon delivery.</div></div></div>
+    <div class="lstep"><div class="lnum">5</div><div><div class="lstitle">Reheat &amp; enjoy</div><div class="lsdesc">Fresh shelf life of 4–5 days — eat Monday through Friday without cooking.</div></div></div>
+  </div>
+  <div class="fu" style="transition-delay:.15s;">
+    <div class="ey" style="margin-bottom:.6rem;">Rotating 2-week menu</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:1.1rem;color:var(--charcoal);">Upcoming Lunch Menu</h3>
+    <div id="lunch-menu-tabs">
+      <button class="lmtab active" onclick="showLM(this,'lm1')">Week 1</button>
+      <button class="lmtab" onclick="showLM(this,'lm2')">Week 2</button>
+    </div>
+    <div class="lmpanel active" id="lm1"><table class="lmtable" id="lm-table-1"></table></div>
+    <div class="lmpanel" id="lm2"><table class="lmtable" id="lm-table-2"></table></div>
+    <p class="lm-note">Menu rotates every 2 weeks &nbsp;·&nbsp; All meals prepared fresh Monday morning &nbsp;·&nbsp; Add-ons: bread +$1 &nbsp;·&nbsp; soda or water +$2 per day</p>
+  </div>
+  <div class="fu" style="transition-delay:.2s;margin-top:2.25rem;">
+    <div class="lprice-band">
+      <div class="lp-item"><div class="lp-amt">$7</div><div class="lp-label">Per lunch (1 day)</div></div>
+      <div class="lp-item"><div class="lp-amt">$35</div><div class="lp-label">Full week (5 days)</div></div>
+      <div class="lp-item"><div class="lp-amt">Mon</div><div class="lp-label">Delivery day &nbsp;·&nbsp; by 11:30 AM</div></div>
+    </div>
+  </div>
+  <div class="lunch-cta-grid fu" style="transition-delay:.25s;">
+    <div>
+      <div class="ey" style="margin-bottom:.65rem;">How to pay</div>
+      <div class="lpay">
+        <div class="lpay-row"><span class="lpay-method">Zelle</span><span class="lpay-val">gaylayounge@gmail.com</span></div>
+        <div class="lpay-row"><span class="lpay-method">Cash App</span><span class="lpay-val">$GaylaYounge</span></div>
+        <div class="lpay-row"><span class="lpay-method">Apple Pay</span><span class="lpay-val">Gayla.younge@icloud.com</span></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--mid);line-height:1.6;">Delivery fee applies for clients 15+ miles from Temple,&nbsp;TX.</p>
+    </div>
+    <div>
+      <div class="ey" style="margin-bottom:.65rem;">Ready to sign up?</div>
+      <p style="font-size:.88rem;color:var(--mid);margin-bottom:1.25rem;line-height:1.7;">Fill out the order form below or DM us on Facebook or Instagram — we'll confirm your week and send payment instructions.</p>
+      <a href="#order" class="btn-p" style="display:inline-block;">Sign up for lunch delivery</a>
+    </div>
+  </div>
+</div>
+</section>
+
 <section id="pricing">
 <div class="si">
 <div class="fu"><div class="ey">Straightforward pricing</div><h2>Order once, eat for a month.</h2><p class="ssub">No weekly commitments. Order when your freezer runs low. All meals labeled with reheat instructions and best-by date.</p></div>
@@ -296,10 +384,10 @@ section{padding:3.5rem 1.25rem;}
 
 <section id="compare">
 <div class="si">
-<div class="fu"><div class="ey">Two ways to order</div><h2>Fresh weekly or frozen anytime.</h2><p class="ssub">Many families do both — fresh weekly bundles during normal weeks, frozen backup for travel and busy stretches.</p></div>
+<div class="fu"><div class="ey">Two ways we feed your family</div><h2>Freezer meals or lunch delivery — or both.</h2><p class="ssub">Many families do both — a stocked freezer for dinner on busy nights, and fresh lunches delivered every Monday so midday is covered too.</p></div>
 <div class="cgrid fu" style="transition-delay:.1s;">
-<div class="ccard hi"><span class="ctag ctb">Fresh but frozen</span><div class="ctitle">Freezer meals</div><div class="cdesc">Cook fresh, freeze immediately. No weekly deadline. Stock up once and eat well all month.</div><ul class="clist"><li>Order anytime — no deadline</li><li>3-month freezer shelf life</li><li>Bulk savings on bundles</li><li>Perfect backup for busy weeks</li><li>$14–90 per order</li></ul></div>
-<div class="ccard"><span class="ctag ctt">Fresh weekly</span><div class="ctitle">Weekly dinner bundle</div><div class="cdesc">Five fresh dinners delivered every Wednesday. Order by Sunday noon. New menu every week.</div><ul class="clist"><li>Order by Sunday, delivered Wednesday</li><li>Fridge shelf life 4–5 days</li><li>New menu every week</li><li>Best for regular weekly families</li><li>$50 per week</li></ul></div>
+<div class="ccard hi"><span class="ctag ctb">Fresh but frozen</span><div class="ctitle">Freezer meals</div><div class="cdesc">Made fresh and frozen at peak. No weekly deadline — stock up once and eat well all month.</div><ul class="clist"><li>Order anytime — no deadline</li><li>3-month freezer shelf life</li><li>Bulk savings on bundles</li><li>12 family entrees on the menu</li><li>$20–90 per order</li></ul></div>
+<div class="ccard"><span class="ctag ctt">Lunch Delivery Program</span><div class="ctitle">Weekly lunch delivery</div><div class="cdesc">Five fresh lunches delivered every Monday by 11:30 AM. Pay by Friday. Rotating 2-week menu.</div><ul class="clist"><li>Pay by Friday, delivered Monday</li><li>Fresh shelf life 4–5 days</li><li>Rotating menu every 2 weeks</li><li>Perfect for busy workdays</li><li>$35 per week ($7/day)</li></ul></div>
 </div>
 </div>
 </section>
@@ -367,8 +455,8 @@ section{padding:3.5rem 1.25rem;}
 <div class="si">
 <div class="fw fu">
 <div class="ey">Place your order</div>
-<h2>Build your freezer bundle.</h2>
-<p class="ssub">Fill out the form and we'll confirm within a few hours with a total and delivery date.</p>
+<h2>Ready to get started?</h2>
+<p class="ssub">Whether you're stocking the freezer, signing up for lunch delivery, or both — fill out the form and we'll confirm within a few hours with a total and next steps.</p>
 <form class="fg" name="frozen-orders" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
 <input type="hidden" name="form-name" value="frozen-orders">
 <p style="display:none;"><input name="bot-field"></p>
@@ -380,10 +468,17 @@ section{padding:3.5rem 1.25rem;}
 <label class="flbl">What would you like to order?</label>
 <select class="fs" name="bundle" required>
 <option value="">Choose an option...</option>
+<optgroup label="── Freezer Meals ──">
 <option>Full freezer bundle — $90 (any 5 entrees)</option>
 <option>Starter pack — $50 (any 3 entrees)</option>
 <option>Individual entrees — I'll list below</option>
-<option>Mix of frozen + weekly fresh bundle</option>
+</optgroup>
+<optgroup label="── Lunch Delivery Program ──">
+<option>Lunch delivery — Week 1 ($35 for the week)</option>
+<option>Lunch delivery — Week 2 ($35 for the week)</option>
+<option>Lunch delivery — single day ($7)</option>
+</optgroup>
+<option>Both freezer meals + lunch delivery</option>
 </select>
 </div>
 <div class="fgrp ff"><label class="flbl">Specific meals or notes</label><textarea class="fta" name="notes" placeholder="List your entree choices, dietary needs, Tex-mex spice level, gate codes, etc."></textarea></div>
@@ -429,14 +524,43 @@ Follow us on Instagram
 </footer>
 
 <script>
+// ─────────────────────────────────────────────────────────────────────────────
+// LUNCH DELIVERY PROGRAM — 2-WEEK ROTATING MENU
+// To update: edit the meal/sides values below, then push to GitHub.
+// ─────────────────────────────────────────────────────────────────────────────
+const LUNCH_MENU = {
+  week1: [
+    { day: "Monday",    meal: "Sweet & Sour Pork",             sides: "Rice" },
+    { day: "Tuesday",   meal: "Chimichurri Flank Steak",       sides: "Baked Beans + Loaded Potato" },
+    { day: "Wednesday", meal: "Honey-Soy Salmon",              sides: "Wilted Spinach + Couscous" },
+    { day: "Thursday",  meal: "Garlic-Ginger Chicken Thighs",  sides: "Quinoa + Peas & Carrots" },
+    { day: "Friday",    meal: "Baked Chicken Leg Quarter",     sides: "Steamed Rice" },
+  ],
+  week2: [
+    { day: "Monday",    meal: "Mini Meatloaf",                 sides: "Sweet Potato Purée + Zoodles" },
+    { day: "Tuesday",   meal: "Creamy Italian Sausage Pasta",  sides: "" },
+    { day: "Wednesday", meal: "Chipotle Shrimp Foil Pack",     sides: "Coconut Rice" },
+    { day: "Thursday",  meal: "Chicken Alfredo",               sides: "Garden Salad" },
+    { day: "Friday",    meal: "Sheet Pan Chicken",             sides: "Sweet Potato, Zucchini & Carrots" },
+  ]
+};
+function buildLunchTable(rows, tableId) {
+  const tbl = document.getElementById(tableId);
+  if (!tbl) return;
+  let html = '<thead><tr><th>Day</th><th>Entrée</th><th>Sides / Included</th></tr></thead><tbody>';
+  rows.forEach(r => {
+    html += `<tr><td class="lm-day">${r.day}</td><td class="lm-meal">${r.meal}</td><td class="lm-sides">${r.sides||'—'}</td></tr>`;
+  });
+  html += '</tbody>';
+  tbl.innerHTML = html;
+}
+buildLunchTable(LUNCH_MENU.week1, 'lm-table-1');
+buildLunchTable(LUNCH_MENU.week2, 'lm-table-2');
+// ─────────────────────────────────────────────────────────────────────────────
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.12});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
-function showM(btn,id){
-document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));
-document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-btn.classList.add('active');
-}
+function showM(btn,id){document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
+function showLM(btn,id){document.querySelectorAll('.lmpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.lmtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
 </script>
 </body>
 </html>
