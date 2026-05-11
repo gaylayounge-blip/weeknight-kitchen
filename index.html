@@ -192,6 +192,29 @@ section{padding:3.5rem 1.25rem;}
   .lmtable th:last-child,.lmtable td:last-child{display:none;}
 }
   /* ── Testimonials Section ─────────────────────────────────── */
+  /* ── Events & Catering ──────────────────────────────────────────── */
+  #events{padding:88px 0;background:#fff;}
+  .events-inner{max-width:1100px;margin:0 auto;padding:0 2rem;}
+  .events-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.18em;color:var(--terra);text-transform:uppercase;margin-bottom:10px;}
+  .events-inner h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--charcoal);margin:0 0 14px;}
+  .events-inner .ssub{max-width:660px;margin:0 0 52px;}
+  .events-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:52px;}
+  .events-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.10);}
+  .events-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-bottom:52px;}
+  .ef-card{background:var(--cream);border-radius:12px;padding:24px 22px;}
+  .ef-icon{font-size:1.6rem;margin-bottom:10px;}
+  .ef-title{font-size:1rem;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+  .ef-desc{font-size:.9rem;color:var(--mid);line-height:1.55;}
+  .events-cta-band{background:var(--terra);border-radius:14px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .events-cta-band h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin:0;}
+  .events-cta-band p{font-size:.95rem;color:rgba(255,255,255,.85);margin:6px 0 0;}
+  .events-cta-btn{background:#fff;color:var(--terra);font-size:.9rem;font-weight:700;padding:.75rem 1.8rem;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
+  .events-cta-btn:hover{opacity:.88;}
+  @media(max-width:700px){
+    .events-photos{grid-template-columns:1fr 1fr;}
+    .events-photos img:last-child{display:none;}
+    .events-cta-band{flex-direction:column;text-align:center;}
+  }
   .testimonials{background-color:#FDF8F4;padding:72px 24px;text-align:center;}
   .testimonials-label{font-size:.78rem;font-weight:600;letter-spacing:.18em;color:#C4714A;text-transform:uppercase;margin-bottom:10px;}
   .testimonials h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#2C2C2A;margin:0 0 12px;}
@@ -237,6 +260,7 @@ section{padding:3.5rem 1.25rem;}
 <li><a href="#lunch">Lunch Program</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#events">Events</a></li>
 <li><a href="#reviews">Reviews</a></li>
 </ul>
 <a href="#order" class="nav-cta">Order now</a>
@@ -413,6 +437,50 @@ section{padding:3.5rem 1.25rem;}
 </div>
 </section>
 
+<section id="events">
+<div class="events-inner">
+  <div class="fu">
+    <p class="events-eyebrow">Event Catering & Cooking</p>
+    <h2>We cook. You celebrate.</h2>
+    <p class="ssub">From intimate family gatherings to milestone celebrations, The Weeknight Kitchen brings the same home-cooked quality that feeds your family every week — right to your event. Everything made from scratch, served fresh.</p>
+  </div>
+  <div class="events-photos fu" style="transition-delay:.08s;">
+    <img src="event-chicken-prep.jpg" alt="Large pans of seasoned herb chicken being prepped for 30 guests" loading="lazy">
+    <img src="event-roasted-chicken.jpg" alt="Golden herb-roasted chicken fresh from the oven" loading="lazy">
+    <img src="event-sheet-cake.jpg" alt="White sheet cake decorated with fresh pink flowers" loading="lazy">
+  </div>
+  <div class="events-features fu" style="transition-delay:.12s;">
+    <div class="ef-card">
+      <div class="ef-icon">🍗</div>
+      <div class="ef-title">Full meal service</div>
+      <div class="ef-desc">We handle the main dish, sides, and dessert — all made from scratch in our kitchen and served fresh at your event.</div>
+    </div>
+    <div class="ef-card">
+      <div class="ef-icon">🎉</div>
+      <div class="ef-title">Any occasion</div>
+      <div class="ef-desc">Birthday parties, baby showers, family reunions, office lunches, holiday gatherings — if you're feeding a crowd, we've got you.</div>
+    </div>
+    <div class="ef-card">
+      <div class="ef-icon">👥</div>
+      <div class="ef-title">Intimate to large groups</div>
+      <div class="ef-desc">We've cooked for groups of 10 to 30+ and we scale with your guest count. Custom menus available for every event.</div>
+    </div>
+    <div class="ef-card">
+      <div class="ef-icon">📍</div>
+      <div class="ef-title">Serving our community</div>
+      <div class="ef-desc">North Austin, Temple, and Belton. We cook and deliver — or cook on-site depending on your setup. Ask us about your event.</div>
+    </div>
+  </div>
+  <div class="events-cta-band fu" style="transition-delay:.16s;">
+    <div>
+      <h3>Planning an event? Let's talk. 🌸</h3>
+      <p>Tell us about your occasion and we'll put together a custom menu and quote. No stress, just good food.</p>
+    </div>
+    <a href="#order" class="events-cta-btn">Get a custom quote →</a>
+  </div>
+</div>
+</section>
+
 <section class="testimonials" id="reviews">
   <p class="testimonials-label">What Neighbors Are Saying</p>
   <h2>Real Reviews from Real Families ⭐</h2>
@@ -456,7 +524,7 @@ section{padding:3.5rem 1.25rem;}
 <div class="fw fu">
 <div class="ey">Place your order</div>
 <h2>Ready to get started?</h2>
-<p class="ssub">Whether you're stocking the freezer, signing up for lunch delivery, or both — fill out the form and we'll confirm within a few hours with a total and next steps.</p>
+<p class="ssub">Whether you're stocking the freezer, signing up for lunch delivery, planning an event, or all three — fill out the form and we'll confirm within a few hours with a total and next steps.</p>
 <form class="fg" name="frozen-orders" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
 <input type="hidden" name="form-name" value="frozen-orders">
 <p style="display:none;"><input name="bot-field"></p>
@@ -479,6 +547,13 @@ section{padding:3.5rem 1.25rem;}
 <option>Lunch delivery — single day ($7)</option>
 </optgroup>
 <option>Both freezer meals + lunch delivery</option>
+</optgroup>
+<optgroup label="── Event Catering ──">
+<option>Event catering — I'd like a custom quote</option>
+<option>Event catering — small gathering (under 15 guests)</option>
+<option>Event catering — medium event (15–30 guests)</option>
+<option>Event catering — large event (30+ guests)</option>
+</optgroup>
 </select>
 </div>
 <div class="fgrp ff"><label class="flbl">Specific meals or notes</label><textarea class="fta" name="notes" placeholder="List your entree choices, dietary needs, Tex-mex spice level, gate codes, etc."></textarea></div>
