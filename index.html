@@ -266,10 +266,10 @@ section{padding:3.5rem 1.25rem;}
   .lmtable th:last-child,.lmtable td:last-child{display:none;}
 }
   /* ── Hero Entry Popup ───────────────────────────────────────────── */
-  .hero-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px);}
+  .hero-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:flex-start;justify-content:center;padding:5vh 1rem 1rem;backdrop-filter:blur(3px);overflow-y:auto;}
   .hero-popup-overlay.open{display:flex;}
-  .hero-popup{background:#fff;border-radius:24px;max-width:520px;width:100%;overflow:hidden;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.25);}
-  .hero-popup-img{width:100%;height:220px;object-fit:cover;object-position:center 40%;display:block;}
+  .hero-popup{background:#fff;border-radius:24px;max-width:500px;width:100%;overflow:hidden;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.25);flex-shrink:0;}
+  .hero-popup-img{width:100%;height:180px;object-fit:cover;object-position:center 40%;display:block;}
   .hero-popup-ribbon{position:absolute;top:16px;left:0;background:var(--terra);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 18px 6px 14px;border-radius:0 2rem 2rem 0;}
   .hero-popup-close{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.35);border:none;border-radius:50%;width:32px;height:32px;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;}
   .hero-popup-close:hover{background:rgba(0,0,0,.55);}
@@ -296,7 +296,7 @@ section{padding:3.5rem 1.25rem;}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
   .promo-float-dismiss{background:rgba(0,0,0,.35);border:none;border-radius:50%;width:24px;height:24px;color:#fff;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;align-self:flex-end;transition:background .2s;}
   .promo-float-dismiss:hover{background:rgba(0,0,0,.55);}
-  @media(max-width:500px){.hero-popup-body{padding:18px 20px 22px;}.promo-float{bottom:16px;right:16px;}}
+  @media(max-width:500px){.hero-popup-overlay{padding:3vh 0.75rem 0.75rem;}.hero-popup-img{height:140px;}.hero-popup-body{padding:16px 18px 20px;}.hero-popup-title{font-size:1.25rem;}.promo-float{bottom:16px;right:16px;}}
   /* ── Holiday Promo Banner ────────────────────────────────────────── */
   .promo-banner{position:relative;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 60%,#1a3a2a 100%);border-radius:20px;padding:0;margin:0 0 52px;overflow:hidden;cursor:pointer;box-shadow:0 8px 40px rgba(0,0,0,.18);}
   .promo-banner::before{content:'';position:absolute;inset:0;background:url('baked-beans-1.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
