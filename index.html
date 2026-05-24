@@ -265,6 +265,38 @@ section{padding:3.5rem 1.25rem;}
   .lunch-cta-grid{grid-template-columns:1fr;}
   .lmtable th:last-child,.lmtable td:last-child{display:none;}
 }
+  /* ── Hero Entry Popup ───────────────────────────────────────────── */
+  .hero-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px);}
+  .hero-popup-overlay.open{display:flex;}
+  .hero-popup{background:#fff;border-radius:24px;max-width:520px;width:100%;overflow:hidden;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.25);}
+  .hero-popup-img{width:100%;height:220px;object-fit:cover;object-position:center 40%;display:block;}
+  .hero-popup-ribbon{position:absolute;top:16px;left:0;background:var(--terra);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 18px 6px 14px;border-radius:0 2rem 2rem 0;}
+  .hero-popup-close{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.35);border:none;border-radius:50%;width:32px;height:32px;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;}
+  .hero-popup-close:hover{background:rgba(0,0,0,.55);}
+  .hero-popup-body{padding:24px 28px 28px;}
+  .hero-popup-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.12em;color:var(--terra);text-transform:uppercase;margin-bottom:8px;}
+  .hero-popup-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--charcoal);line-height:1.2;margin-bottom:8px;}
+  .hero-popup-desc{font-size:.88rem;color:var(--mid);line-height:1.65;margin-bottom:16px;}
+  .hero-popup-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+  .hero-popup-pill{background:var(--terra-light);color:var(--terra);font-size:.78rem;font-weight:500;padding:4px 12px;border-radius:2rem;}
+  .hero-popup-pricing{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;}
+  .hero-popup-was{font-size:1rem;color:var(--light);text-decoration:line-through;}
+  .hero-popup-now{font-family:'Playfair Display',serif;font-size:2rem;color:var(--charcoal);}
+  .hero-popup-save{background:#D4AA50;color:#2C2C2A;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:1rem;}
+  .hero-popup-cta{display:block;text-align:center;background:var(--terra);color:#fff;font-size:.95rem;font-weight:600;padding:.9rem 2rem;border-radius:2rem;text-decoration:none;transition:background .2s;margin-bottom:10px;}
+  .hero-popup-cta:hover{background:#a8552e;}
+  .hero-popup-skip{display:block;text-align:center;font-size:.78rem;color:var(--light);cursor:pointer;background:none;border:none;width:100%;padding:0;}
+  .hero-popup-skip:hover{color:var(--mid);}
+  /* ── Floating Promo Badge ────────────────────────────────────────── */
+  .promo-float{display:none;position:fixed;bottom:28px;right:28px;z-index:150;flex-direction:column;align-items:flex-end;gap:8px;}
+  .promo-float.visible{display:flex;}
+  .promo-float-btn{background:var(--terra);color:#fff;border:none;border-radius:2rem;padding:.7rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(196,113,74,.45);transition:transform .2s,box-shadow .2s;text-decoration:none;}
+  .promo-float-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(196,113,74,.55);}
+  .promo-float-pulse{width:10px;height:10px;border-radius:50%;background:#fff;animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+  .promo-float-dismiss{background:rgba(0,0,0,.35);border:none;border-radius:50%;width:24px;height:24px;color:#fff;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;align-self:flex-end;transition:background .2s;}
+  .promo-float-dismiss:hover{background:rgba(0,0,0,.55);}
+  @media(max-width:500px){.hero-popup-body{padding:18px 20px 22px;}.promo-float{bottom:16px;right:16px;}}
   /* ── Holiday Promo Banner ────────────────────────────────────────── */
   .promo-banner{position:relative;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 60%,#1a3a2a 100%);border-radius:20px;padding:0;margin:0 0 52px;overflow:hidden;cursor:pointer;box-shadow:0 8px 40px rgba(0,0,0,.18);}
   .promo-banner::before{content:'';position:absolute;inset:0;background:url('baked-beans-1.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
@@ -360,6 +392,38 @@ section{padding:3.5rem 1.25rem;}
 </style>
 </head>
 <body>
+
+<!-- ── Hero Entry Popup ─────────────────────────────────────────── -->
+<div class="hero-popup-overlay" id="heroPopupOverlay">
+  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="Memorial Day Special">
+    <img class="hero-popup-img" id="heroPopupImg" src="" alt="Memorial Day Special">
+    <div class="hero-popup-ribbon" id="heroPopupRibbon"></div>
+    <button class="hero-popup-close" id="heroPopupClose" aria-label="Close">✕</button>
+    <div class="hero-popup-body">
+      <div class="hero-popup-eyebrow" id="heroPopupEyebrow"></div>
+      <div class="hero-popup-title" id="heroPopupTitle"></div>
+      <div class="hero-popup-desc" id="heroPopupDesc"></div>
+      <div class="hero-popup-pills" id="heroPopupPills"></div>
+      <div class="hero-popup-pricing">
+        <span class="hero-popup-was" id="heroPopupWas"></span>
+        <span class="hero-popup-now" id="heroPopupNow"></span>
+        <span class="hero-popup-save" id="heroPopupSave"></span>
+      </div>
+      <a class="hero-popup-cta" id="heroPopupCta" href="#events">See the Memorial Day Deal →</a>
+      <button class="hero-popup-skip" id="heroPopupSkip">No thanks, I'll keep browsing</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Floating Promo Badge ─────────────────────────────────────── -->
+<div class="promo-float" id="promoFloat">
+  <button class="promo-float-dismiss" id="promoFloatDismiss" aria-label="Dismiss">✕</button>
+  <a class="promo-float-btn" id="promoFloatBtn" href="#events">
+    <span class="promo-float-pulse"></span>
+    <span id="promoFloatLabel"></span>
+  </a>
+</div>
+
 <nav>
 <a href="#hero" class="nav-logo">
 <!-- FIXED: viewBox extended to 275, height increased to 62, location text enlarged, darkened, and corrected to full service area -->
@@ -931,6 +995,72 @@ const PROMO_CONFIG = {
     s.style.animationDelay = (Math.random()*2.5)+'s'; s.style.animationDuration = (1.5+Math.random()*2)+'s';
     starsEl.appendChild(s);
   }
+})();
+
+// ── Hero Entry Popup + Floating Badge ────────────────────────────────────────
+(function initHeroPromo() {
+  const cfg = PROMO_CONFIG;
+  if (!cfg.active) return;
+
+  // Pick the best photo for the popup hero image
+  const heroImg = (cfg.media || []).find(m => m.type === 'img');
+
+  // Populate popup
+  document.getElementById('heroPopupImg').src        = heroImg ? heroImg.src : '';
+  document.getElementById('heroPopupRibbon').textContent = cfg.emoji + ' ' + cfg.flagText;
+  document.getElementById('heroPopupEyebrow').textContent = 'Limited Time Offer';
+  document.getElementById('heroPopupTitle').textContent   = cfg.bannerTitle;
+  document.getElementById('heroPopupDesc').textContent    = cfg.bannerSubtitle;
+  document.getElementById('heroPopupWas').textContent     = cfg.originalPrice;
+  document.getElementById('heroPopupNow').textContent     = cfg.salePrice;
+  document.getElementById('heroPopupSave').textContent    = cfg.savingsTag;
+  const pillsEl = document.getElementById('heroPopupPills');
+  cfg.items.forEach(i => {
+    const p = document.createElement('span');
+    p.className = 'hero-popup-pill';
+    p.textContent = i;
+    pillsEl.appendChild(p);
+  });
+
+  // Floating badge label
+  document.getElementById('promoFloatLabel').textContent = cfg.emoji + ' ' + cfg.salePrice + ' Memorial Day Deal';
+
+  // Show popup after 2s delay
+  const popupOverlay = document.getElementById('heroPopupOverlay');
+  const floatBadge   = document.getElementById('promoFloat');
+  setTimeout(() => { popupOverlay.classList.add('open'); }, 2000);
+
+  // Close popup → show floating badge
+  function closeHeroPopup() {
+    popupOverlay.classList.remove('open');
+    floatBadge.classList.add('visible');
+  }
+
+  document.getElementById('heroPopupClose').addEventListener('click', closeHeroPopup);
+  document.getElementById('heroPopupSkip').addEventListener('click', closeHeroPopup);
+  document.getElementById('heroPopupCta').addEventListener('click', closeHeroPopup);
+  popupOverlay.addEventListener('click', e => { if (e.target === popupOverlay) closeHeroPopup(); });
+
+  // Dismiss floating badge
+  document.getElementById('promoFloatDismiss').addEventListener('click', () => {
+    floatBadge.classList.remove('visible');
+  });
+
+  // Hide floating badge when user reaches the events section
+  const eventsSection = document.getElementById('events');
+  if (eventsSection) {
+    const evObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        floatBadge.style.opacity = e.isIntersecting ? '0' : '1';
+        floatBadge.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
+      });
+    }, { threshold: 0.2 });
+    evObs.observe(eventsSection);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && popupOverlay.classList.contains('open')) closeHeroPopup();
+  });
 })();
 
 function openPromoModal() {
