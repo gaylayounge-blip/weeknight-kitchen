@@ -267,7 +267,7 @@ section{padding:3.5rem 1.25rem;}
 }
   /* ── Holiday Promo Banner ────────────────────────────────────────── */
   .promo-banner{position:relative;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 60%,#1a3a2a 100%);border-radius:20px;padding:0;margin:0 0 52px;overflow:hidden;cursor:pointer;box-shadow:0 8px 40px rgba(0,0,0,.18);}
-  .promo-banner::before{content:'';position:absolute;inset:0;background:url('tres-leches-cake.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
+  .promo-banner::before{content:'';position:absolute;inset:0;background:url('baked-beans-1.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
   .promo-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:20px;}
   .promo-star{position:absolute;width:4px;height:4px;background:#fff;border-radius:50%;animation:twinkle 2.5s infinite;}
   @keyframes twinkle{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:.8;transform:scale(1)}}
@@ -322,8 +322,9 @@ section{padding:3.5rem 1.25rem;}
   .events-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.18em;color:var(--terra);text-transform:uppercase;margin-bottom:10px;}
   .events-inner h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--charcoal);margin:0 0 14px;}
   .events-inner .ssub{max-width:660px;margin:0 0 52px;}
-  .events-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:52px;}
+  .events-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:52px;}
   .events-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.10);}
+  .events-photos img.tall{aspect-ratio:3/4;}
   .events-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-bottom:52px;}
   .ef-card{background:var(--cream);border-radius:12px;padding:24px 22px;}
   .ef-icon{font-size:1.6rem;margin-bottom:10px;}
@@ -336,7 +337,6 @@ section{padding:3.5rem 1.25rem;}
   .events-cta-btn:hover{opacity:.88;}
   @media(max-width:700px){
     .events-photos{grid-template-columns:1fr 1fr;}
-    .events-photos img:last-child{display:none;}
     .events-cta-band{flex-direction:column;text-align:center;}
   }
   .testimonials{background-color:#FDF8F4;padding:72px 24px;text-align:center;}
@@ -528,6 +528,7 @@ section{padding:3.5rem 1.25rem;}
   <div class="events-photos fu" style="transition-delay:.08s;">
     <img src="mac-cheese-4.jpg" alt="Multiple trays of baked mac and cheese fresh from the kitchen" loading="lazy">
     <img src="mac-cheese-2.jpg" alt="Golden baked mac and cheese with herb breadcrumb topping" loading="lazy">
+    <img src="baked-beans-1.jpg" alt="Seven cups of hearty southern baked beans" loading="lazy">
     <img src="tres-leches-cake.jpg" alt="Tres Leches berry cake for Memorial Day" loading="lazy">
   </div>
   <div class="events-features fu" style="transition-delay:.12s;">
@@ -852,10 +853,16 @@ const PROMO_CONFIG = {
   salePrice:     "$50",
   savingsTag:    "Save $15",
 
-  // Popup media — photo shown first, video tab shown if videoSrc is set
-  imageSrc:   "tres-leches-cake.jpg",
-  imageSrc2:  "tres-leches-cake-2.jpg",   // second photo tab (optional, leave "" to hide)
-  videoSrc:   "tres-leches-cake.mp4",      // leave "" to hide video tab
+  // Popup media tabs — add as many photos as you like, videos optional.
+  // Each entry: { label, type: "img"|"vid", src }
+  media: [
+    { label: "🎂 Tres Leches Cake",  type: "img", src: "tres-leches-cake.jpg"   },
+    { label: "🎂 Cake (2)",          type: "img", src: "tres-leches-cake-2.jpg" },
+    { label: "🎬 Cake Video",        type: "vid", src: "tres-leches-cake.mp4"   },
+    { label: "🫘 Baked Beans",       type: "img", src: "baked-beans-1.jpg"      },
+    { label: "🫘 Beans (2)",         type: "img", src: "baked-beans-2.jpg"      },
+    { label: "🎬 Beans Video",       type: "vid", src: "baked-beans.mp4"        },
+  ],
 
   // Popup body copy
   popupTitle: "Memorial Day Cookout Bundle",
@@ -894,10 +901,7 @@ const PROMO_CONFIG = {
 
   // Build media tabs in modal
   const wrap = document.getElementById('promoModalMediaWrap');
-  const tabs = [];
-  if (cfg.imageSrc)  tabs.push({ label: '📷 Photo 1',  type: 'img', src: cfg.imageSrc });
-  if (cfg.imageSrc2) tabs.push({ label: '📷 Photo 2',  type: 'img', src: cfg.imageSrc2 });
-  if (cfg.videoSrc)  tabs.push({ label: '▶ Video',     type: 'vid', src: cfg.videoSrc });
+  const tabs = (cfg.media || []).filter(m => m.src);
   if (tabs.length > 1) {
     const tabRow = document.createElement('div'); tabRow.className = 'promo-media-tabs'; tabRow.style.padding = '10px 10px 0';
     tabs.forEach((t, i) => {
