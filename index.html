@@ -269,13 +269,13 @@ section{padding:3.5rem 1.25rem;}
   /* Popup: side-by-side so it never needs vertical scrolling */
   .hero-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px);}
   .hero-popup-overlay.open{display:flex;}
-  .hero-popup{background:#fff;border-radius:20px;max-width:600px;width:100%;overflow:hidden;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.25);display:grid;grid-template-columns:180px 1fr;}
-  .hero-popup-img{width:100%;height:100%;min-height:300px;object-fit:cover;object-position:center;display:block;}
-  .hero-popup-ribbon{position:absolute;top:12px;left:0;background:var(--terra);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px 4px 10px;border-radius:0 2rem 2rem 0;z-index:2;}
+  .hero-popup{background:#fff;border-radius:20px;max-width:600px;width:100%;overflow:hidden;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.25);display:grid;grid-template-columns:180px 1fr;grid-template-rows:auto 1fr;}
+  .hero-popup-img{width:100%;height:100%;min-height:300px;object-fit:cover;object-position:center;display:block;grid-row:2;}
+  .hero-popup-ribbon{grid-column:1/-1;grid-row:1;background:var(--terra);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;text-align:center;}
   .hero-popup-close{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.4);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;}
   .hero-popup-close:hover{background:rgba(0,0,0,.6);}
-  .hero-popup-body{padding:18px 20px 18px;display:flex;flex-direction:column;justify-content:center;gap:0;}
-  .hero-popup-eyebrow{font-size:.65rem;font-weight:600;letter-spacing:.12em;color:var(--terra);text-transform:uppercase;margin-bottom:5px;}
+  .hero-popup-body{padding:18px 20px 18px;display:flex;flex-direction:column;justify-content:center;gap:0;grid-row:2;}
+  .hero-popup-eyebrow{display:none;}
   .hero-popup-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--charcoal);line-height:1.25;margin-bottom:10px;}
   .hero-popup-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
   .hero-popup-pill{background:var(--terra-light);color:var(--terra);font-size:.7rem;font-weight:500;padding:3px 10px;border-radius:2rem;}
