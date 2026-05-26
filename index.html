@@ -305,7 +305,7 @@ section{padding:3.5rem 1.25rem;}
   @media(max-width:480px){.promo-float{bottom:16px;right:16px;}}
   /* ── Holiday Promo Banner ────────────────────────────────────────── */
   .promo-banner{position:relative;background:linear-gradient(135deg,#1a3a2a 0%,#2d5a3d 60%,#1a3a2a 100%);border-radius:20px;padding:0;margin:0 0 52px;overflow:hidden;cursor:pointer;box-shadow:0 8px 40px rgba(0,0,0,.18);scroll-margin-top:110px;}
-  .promo-banner::before{content:'';position:absolute;inset:0;background:url('baked-beans-1.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
+  .promo-banner::before{content:'';position:absolute;inset:0;background:url('lunch-img-0096.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
   .promo-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:20px;}
   .promo-star{position:absolute;width:4px;height:4px;background:#fff;border-radius:50%;animation:twinkle 2.5s infinite;}
   @keyframes twinkle{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:.8;transform:scale(1)}}
@@ -401,8 +401,8 @@ section{padding:3.5rem 1.25rem;}
 
 <!-- ── Hero Entry Popup ─────────────────────────────────────────── -->
 <div class="hero-popup-overlay" id="heroPopupOverlay">
-  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="Memorial Day Special">
-    <img class="hero-popup-img" id="heroPopupImg" src="" alt="Memorial Day Special">
+  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="Father's Day Special">
+    <img class="hero-popup-img" id="heroPopupImg" src="" alt="Father's Day Special">
     <div class="hero-popup-ribbon" id="heroPopupRibbon"></div>
     <button class="hero-popup-close" id="heroPopupClose" aria-label="Close">✕</button>
     <div class="hero-popup-body">
@@ -596,10 +596,10 @@ section{padding:3.5rem 1.25rem;}
   </div>
 
   <div class="events-photos fu" style="transition-delay:.08s;">
-    <img src="mac-cheese-4.jpg" alt="Multiple trays of baked mac and cheese fresh from the kitchen" loading="lazy">
-    <img src="mac-cheese-2.jpg" alt="Golden baked mac and cheese with herb breadcrumb topping" loading="lazy">
-    <img src="baked-beans-1.jpg" alt="Seven cups of hearty southern baked beans" loading="lazy">
-    <img src="tres-leches-cake.jpg" alt="Tres Leches berry cake for Memorial Day" loading="lazy">
+    <img src="lunch-img-0096.jpg" alt="Fresh home-cooked meal from The Weeknight Kitchen" loading="lazy">
+    <img src="lunch-img-0087.jpg" alt="Delicious meal prep from The Weeknight Kitchen" loading="lazy">
+    <img src="lunch-img-0089.jpg" alt="Home-cooked food ready for delivery" loading="lazy">
+    <img src="lunch-img-0085.jpg" alt="Fresh made comfort food from The Weeknight Kitchen" loading="lazy">
   </div>
   <div class="events-features fu" style="transition-delay:.12s;">
     <div class="ef-card">
@@ -781,8 +781,8 @@ section{padding:3.5rem 1.25rem;}
 <label class="flbl">What would you like to order?</label>
 <select class="fs" name="bundle" required>
 <option value="">Choose an option...</option>
-<optgroup label="🇺🇸 Memorial Day Special ──">
-<option value="memorial-day-bundle">Memorial Day Bundle — Mac &amp; Cheese, Baked Beans &amp; Tres Leches Berry Cake · $50 (save $15!)</option>
+<optgroup label="👨 Father's Day Special ──">
+<option value="fathers-day-bundle">Father's Day Bundle — Beef Kebab Marinade, BLT Pasta Salad &amp; Blackberry Cobbler · $50 (save $15!)</option>
 </optgroup>
 <optgroup label="── Freezer Meals ──">
 <option>Full freezer bundle — $110 (any 5 entrees)</option>
@@ -918,18 +918,18 @@ const PROMO_CONFIG = {
   active: true,
 
   // Banner pill label
-  emoji:       "🇺🇸",
-  flagText:    "Memorial Day Special · Limited Time",
+  emoji:       "👨",
+  flagText:    "Father's Day Special · Limited Time",
 
   // Banner headline & teaser
-  bannerTitle:    "Memorial Day Bundle — Feed the Cookout!",
-  bannerSubtitle: "Treat your guests to a home-cooked spread this holiday weekend. Our special bundle has the sides AND dessert covered.",
+  bannerTitle:    "Father's Day Bundle — Treat Dad Right!",
+  bannerSubtitle: "Celebrate the dads in your life with a home-cooked meal worth savoring. Our Father's Day bundle is packed with bold, satisfying flavors — at a special price.",
 
   // What's included (shown as chips on banner, list in popup)
   items: [
-    "Gooey Mac & Cheese",
-    "Southern Baked Beans",
-    "Tres Leches Berry Cake"
+    "Beef Kebab Marinade",
+    "BLT Pasta Salad",
+    "Blackberry Cobbler"
   ],
 
   // Pricing
@@ -940,18 +940,18 @@ const PROMO_CONFIG = {
   // Popup media tabs — add as many photos as you like, videos optional.
   // Each entry: { label, type: "img"|"vid", src }
   media: [
-    { label: "🎂 Tres Leches Cake",  type: "img", src: "tres-leches-cake.jpg"   },
-    { label: "🎂 Cake (2)",          type: "img", src: "tres-leches-cake-2.jpg" },
-    { label: "🎬 Cake Video",        type: "vid", src: "tres-leches-cake.mp4"   },
-    { label: "🫘 Baked Beans",       type: "img", src: "baked-beans-1.jpg"      },
-    { label: "🫘 Beans (2)",         type: "img", src: "baked-beans-2.jpg"      },
-    { label: "🎬 Beans Video",       type: "vid", src: "baked-beans.mp4"        },
+    { label: "🍽️ From Our Kitchen",  type: "img", src: "lunch-img-0096.jpg" },
+    { label: "🍽️ Fresh Prep",        type: "img", src: "lunch-img-0087.jpg" },
+    { label: "🍽️ Home Cooking",      type: "img", src: "lunch-img-0089.jpg" },
+    { label: "🍽️ Ready to Enjoy",    type: "img", src: "lunch-img-0085.jpg" },
+    { label: "🍽️ Made with Love",    type: "img", src: "lunch-img-0075.jpg" },
+    { label: "🍽️ Comfort Food",      type: "img", src: "lunch-img-0079.jpg" },
   ],
 
   // Popup body copy
-  popupTitle: "Memorial Day Cookout Bundle",
-  popupDesc:  "Skip the sides scramble this holiday weekend. We've bundled three crowd-pleasers — creamy mac, smoky baked beans, and our showstopping Tres Leches berry cake — at a special Memorial Day price. Available for delivery or pickup through Monday.",
-  popupNote:  "🗓 Available Memorial Day weekend only · Order by Sunday to guarantee delivery.",
+  popupTitle: "Father's Day Bundle",
+  popupDesc:  "Give Dad the gift of a real home-cooked meal. This bundle brings bold, satisfying flavors to the table — a savory beef kebab marinade, a fresh BLT pasta salad, and a rich blackberry cobbler to finish it off. Everything made fresh, delivered to your door.",
+  popupNote:  "🗓 Order by Friday, June 12 to guarantee delivery the week of Father's Day.",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
