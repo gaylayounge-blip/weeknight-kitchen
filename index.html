@@ -656,7 +656,11 @@ section{padding:3.5rem 1.25rem;}
     </div>
     <div class="lmpanel active" id="lm1"><table class="lmtable" id="lm-table-1"></table></div>
     <div class="lmpanel" id="lm2"><table class="lmtable" id="lm-table-2"></table></div>
-    <p class="lm-note">Menu rotates every 2 weeks &nbsp;·&nbsp; All meals prepared fresh Monday morning &nbsp;·&nbsp; Drink included with each meal</p>
+    <p class="lm-note">All meals delivered Monday · Refrigerate immediately · Ready by 11:30 AM · Menu rotates every 2 weeks</p>
+    <div style="margin-top:1.2rem;">
+      <p style="font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--charcoal);font-weight:600;margin-bottom:0.5rem;">Add-Ons <span style="font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;color:var(--mid);">— note selections when ordering</span></p>
+      <table class="lmtable" id="lm-addons" style="max-width:340px;"></table>
+    </div>
   </div>
   <div class="fu" style="transition-delay:.2s;margin-top:2.25rem;">
     <div class="lprice-band">
@@ -871,18 +875,22 @@ Follow us on Instagram
 // ─────────────────────────────────────────────────────────────────────────────
 const LUNCH_MENU = {
   week1: [
-    { day: "Monday",    meal: "Pulled Pork Rice Bowl",      sides: "Edamame Cabbage Slaw" },
-    { day: "Tuesday",   meal: "Beef and Cheese Enchiladas", sides: "Spanish Rice + Black Beans" },
-    { day: "Wednesday", meal: "Teriyaki Meatballs",         sides: "Steamed Rice + Broccoli" },
-    { day: "Thursday",  meal: "Chicken Curry",              sides: "Basmati Rice" },
-    { day: "Friday",    meal: "Hibachi Fried Rice",         sides: "" },
+    { day: "Monday",    meal: "BBQ Grilled Chicken",           sides: "Gooey Mac n Cheese" },
+    { day: "Tuesday",   meal: "Salisbury Steak",               sides: "Mashed Potatoes and Gravy" },
+    { day: "Wednesday", meal: "Spaghetti Carbonara & Pancetta",sides: "Caesar Salad" },
+    { day: "Thursday",  meal: "Garlic Pork Chops",             sides: "Jasmine Rice + Asparagus" },
+    { day: "Friday",    meal: "Chicken Sliders",               sides: "Chips + Pickles" },
   ],
   week2: [
-    { day: "Monday",    meal: "BBQ Chicken",             sides: "Gooey Mac n Cheese" },
-    { day: "Tuesday",   meal: "Cheeseburger Sliders",    sides: "Homemade Fries" },
-    { day: "Wednesday", meal: "Pan Fried Cajun Salmon",  sides: "Cucumber Salsa + Yellow Rice" },
-    { day: "Thursday",  meal: "Chicken Parmigiana",      sides: "Spaghetti + Marinara Sauce" },
-    { day: "Friday",    meal: "Pulled Pork",             sides: "Corn Salad & Cotija Cheese" },
+    { day: "Monday",    meal: "Sunday Rigatoni with Meatballs",  sides: "Garlic Bread" },
+    { day: "Tuesday",   meal: "Glazed Pork Ribs",               sides: "Potato Salad" },
+    { day: "Wednesday", meal: "Grilled Chicken Fajita Tacos",    sides: "Cabbage Slaw + Yellow Rice" },
+    { day: "Thursday",  meal: "Mediterranean Chicken Kebabs",    sides: "Jasmine Rice" },
+    { day: "Friday",    meal: "Chicken Tenders",                 sides: "Zucchini Dippers + Marinara Sauce" },
+  ],
+  addons: [
+    { item: "Bread (roll or slice)", price: "+$1.00", notes: "" },
+    { item: "Soda or Water",         price: "+$2.00", notes: "" },
   ]
 };
 function buildLunchTable(rows, tableId) {
@@ -897,6 +905,16 @@ function buildLunchTable(rows, tableId) {
 }
 buildLunchTable(LUNCH_MENU.week1, 'lm-table-1');
 buildLunchTable(LUNCH_MENU.week2, 'lm-table-2');
+(function buildAddons() {
+  const tbl = document.getElementById('lm-addons');
+  if (!tbl || !LUNCH_MENU.addons) return;
+  let html = '<thead><tr><th>Add-On</th><th>Price</th></tr></thead><tbody>';
+  LUNCH_MENU.addons.forEach(a => {
+    html += `<tr><td class="lm-meal">${a.item}</td><td class="lm-day" style="text-align:center;">${a.price}</td></tr>`;
+  });
+  html += '</tbody>';
+  tbl.innerHTML = html;
+})();
 // ─────────────────────────────────────────────────────────────────────────────
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.12});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
