@@ -260,10 +260,17 @@ section{padding:3.5rem 1.25rem;}
 .lm-sides{font-size:.8rem;color:var(--mid);}
 .lm-note{font-size:.78rem;color:var(--mid);font-style:italic;margin-top:.9rem;line-height:1.6;}
 .lunch-cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:2.5rem;}
+/* Fresh from Our Kitchen */
+.fok-grid{display:flex;flex-direction:column;gap:2rem;}
+.fok-dish{background:var(--warm);border:1px solid var(--border);border-radius:1rem;overflow:hidden;padding:1.25rem 1.25rem 1rem;}
+.fok-label{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--charcoal);margin-bottom:.85rem;}
+.fok-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.5rem;}
+.fok-photos img,.fok-photos video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:.5rem;display:block;}
 @media(max-width:768px){
   .lprice-band{grid-template-columns:1fr;gap:1rem;}
   .lunch-cta-grid{grid-template-columns:1fr;}
   .lmtable th:last-child,.lmtable td:last-child{display:none;}
+  .fok-photos{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));}
 }
   /* ── Hero Entry Popup ───────────────────────────────────────────── */
   /* Popup: side-by-side so it never needs vertical scrolling */
@@ -718,6 +725,58 @@ section{padding:3.5rem 1.25rem;}
       <a href="#order" class="btn-p" style="display:inline-block;">Sign up for lunch delivery</a>
     </div>
   </div>
+
+  <!-- Fresh from Our Kitchen -->
+  <div class="fu" style="transition-delay:.3s;margin-top:2.75rem;">
+    <div class="ey" style="margin-bottom:.5rem;">Fresh from our kitchen</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:.4rem;color:var(--charcoal);">Last Week's Lunches</h3>
+    <p style="font-size:.85rem;color:var(--mid);margin-bottom:1.6rem;line-height:1.7;">Real meals, made fresh every Monday morning. Here's a look at what our lunch delivery clients enjoyed last week.</p>
+
+    <div class="fok-grid">
+
+      <!-- Miso Ginger Ground Beef -->
+      <div class="fok-dish">
+        <div class="fok-label">Miso Ginger Ground Beef Noodles</div>
+        <div class="fok-photos">
+          <img src="lunch-miso-img_01332.jpg" alt="Miso Ginger Ground Beef" loading="lazy">
+          <img src="lunch-miso-img_01352.jpg" alt="Miso Ginger Ground Beef" loading="lazy">
+          <video src="lunch-miso-video.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Grilled Salmon & Risotto -->
+      <div class="fok-dish">
+        <div class="fok-label">Grilled Salmon &amp; Risotto</div>
+        <div class="fok-photos">
+          <img src="lunch-salmon-img_0015.jpg" alt="Grilled Salmon and Risotto" loading="lazy">
+          <img src="lunch-salmon-img_0017.jpg" alt="Grilled Salmon and Risotto" loading="lazy">
+          <img src="lunch-salmon-img_0018.jpg" alt="Grilled Salmon and Risotto" loading="lazy">
+          <img src="lunch-salmon-img_0023.jpg" alt="Grilled Salmon and Risotto" loading="lazy">
+          <img src="lunch-salmon-img_0025.jpg" alt="Grilled Salmon and Risotto" loading="lazy">
+          <video src="lunch-salmon-video.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Shrimp Foil Bake -->
+      <div class="fok-dish">
+        <div class="fok-label">Shrimp Foil Bake</div>
+        <div class="fok-photos">
+          <img src="lunch-shrimp-img_0060.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0062.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0063.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0065.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0066.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0069.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0070.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0072.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <img src="lunch-shrimp-img_0073.jpg" alt="Shrimp Foil Bake" loading="lazy">
+          <video src="lunch-shrimp-video.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 </section>
 
