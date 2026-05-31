@@ -188,6 +188,14 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-
 .clist li{font-size:.85rem;color:var(--mid);display:flex;align-items:center;gap:8px;}
 .clist li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;}
 #about{background:var(--warm);}
+/* Samples outreach */
+.samples-block{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2rem;}
+.samples-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.45rem;}
+.samples-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:.5rem;display:block;}
+@media(max-width:900px){
+  .samples-block{grid-template-columns:1fr;}
+  .samples-grid{grid-template-columns:1fr 1fr;}
+}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto;}
 .about-card{background:var(--cream);border-radius:2rem;padding:2.5rem;border:1px solid var(--border);}
 .about-avatar{width:64px;height:64px;border-radius:50%;background:var(--terra-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--terra);margin-bottom:1.25rem;}
@@ -657,8 +665,8 @@ section{padding:3.5rem 1.25rem;}
       <div class="community-grid cols-4">
         <img src="event-real-img-6686.jpg" alt="Finger food spread for puppy birthday party" loading="lazy">
         <img src="event-real-img-6690.jpg" alt="Catered finger foods for puppy birthday celebration" loading="lazy">
-        <video src="event-real-img-6691.mp4" autoplay muted loop playsinline></video>
-        <video src="event-real-img-6692.mp4" autoplay muted loop playsinline></video>
+        <video src="event-real-img-6691.mp4" controls playsinline preload="metadata" style="border-radius:.6rem;width:100%;background:#000;"></video>
+        <video src="event-real-img-6692.mp4" controls playsinline preload="metadata" style="border-radius:.6rem;width:100%;background:#000;"></video>
       </div>
     </div>
   </div>
@@ -820,6 +828,30 @@ section{padding:3.5rem 1.25rem;}
 <div class="about-sub">North Austin · Temple · Belton · Cottage food certified</div>
 </div>
 </div>
+
+<!-- Samples Outreach -->
+<div class="si" style="padding-top:0;padding-bottom:2.5rem;">
+  <div class="samples-block fu">
+    <div class="samples-text">
+      <div class="ey" style="margin-bottom:.5rem;">Out in the community</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--charcoal);margin-bottom:.75rem;">Bringing the Kitchen to Local Businesses</h3>
+      <p style="font-size:.9rem;color:var(--mid);line-height:1.8;margin-bottom:1rem;">We believe the best way to introduce The Weeknight Kitchen is one bite at a time. We're actively visiting local businesses across North Austin, Temple, and Belton — dropping off fresh samples so teams and office staff can taste exactly what we deliver.</p>
+      <p style="font-size:.9rem;color:var(--mid);line-height:1.8;margin-bottom:1.25rem;">If you're a business owner or office manager interested in feeding your team — whether it's a weekly lunch program, a catered event, or just a great fridge-stocked option for busy staff — we'd love to stop by.</p>
+      <a href="#order" class="btn-p" style="display:inline-block;font-size:.85rem;">Request a sample visit</a>
+    </div>
+    <div class="samples-gallery">
+      <div class="samples-grid">
+        <img src="sample-img-img_0076_3.jpg" alt="Weeknight Kitchen samples" loading="lazy">
+        <img src="sample-img-img_0077_3.jpg" alt="Weeknight Kitchen samples" loading="lazy">
+        <img src="sample-img-img_0078_3.jpg" alt="Weeknight Kitchen samples" loading="lazy">
+        <img src="sample-img-img_0081_4.jpg" alt="Weeknight Kitchen samples" loading="lazy">
+        <img src="sample-img-img_0083_3.jpg" alt="Weeknight Kitchen samples" loading="lazy">
+        <video src="sample-video.mp4" controls playsinline preload="metadata" style="border-radius:.6rem;width:100%;background:#000;"></video>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
 
 <section class="testimonials" id="reviews">
