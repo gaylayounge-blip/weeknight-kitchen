@@ -189,6 +189,7 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-
 .mtab.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
 .mpanel{display:none;}
 .mpanel.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
+#mw.mpanel.active{display:block;}
 .mc{background:var(--warm);border:1px solid var(--border);border-radius:1.25rem;padding:1.25rem;transition:transform .2s;}
 .mc:hover{transform:translateY(-4px);}
 .mc.new{border:2px solid #1D9E75;}
@@ -1324,14 +1325,14 @@ const WEEKLY_SPECIALS_CONFIG = {
       name:  "Beef Stroganoff",
       cat:   "Comfort · Eastern European",
       desc:  "Tender beef sirloin with mushrooms and onions in a rich, creamy sauce over egg noodles. A classic that reheats beautifully — comfort food at its best.",
-      price: "$30–$45",
+      price: "$30",
       tags:  ["This week only", "Limited qty"]
     },
     {
       name:  "Orange Chicken",
       cat:   "Asian",
       desc:  "Crispy chicken thighs tossed in a sweet and tangy orange sauce, served with steamed jasmine rice and broccoli. A crowd-pleaser every single time.",
-      price: "$30–$45",
+      price: "$30",
       tags:  ["This week only", "Fresh batch"]
     }
   ]
@@ -1362,20 +1363,19 @@ const FLASH_SALE_CONFIG = {
 
 // ─── Render weekly specials ───────────────────────────────────────────────────
 (function renderSpecials() {
-  const cfg = WEEKLY_SPECIALS_CONFIG;
-  document.getElementById('wspWeekLabel').textContent  = cfg.weekLabel;
-  document.getElementById('wspDeadline').textContent   = cfg.orderDeadline;
-  const grid = document.getElementById('wspGrid');
-  if (!grid) return;
-  grid.innerHTML = cfg.items.map(item => `
-    <div class="mc">
-      <div class="mcat">${item.cat}</div>
-      <div class="mname">${item.name}</div>
-      <div class="mdesc">${item.desc}</div>
-      <div class="mbs">${item.tags.map((t,i) => `<span class="mb ${i===0?'mbp':'mbg'}">${t}</span>`).join('')}</div>
-      <div class="mfoot"><span class="mprice">${item.price}</span><span class="mserve">Serves 4–6</span></div>
-    </div>
-  `).join('');
+  try {
+    const cfg = WEEKLY_SPECIALS_CONFIG;
+    var wl = document.getElementById('wspWeekLabel');
+    var wd = document.getElementById('wspDeadline');
+    var grid = document.getElementById('wspGrid');
+    if (wl) wl.textContent = cfg.weekLabel;
+    if (wd) wd.textContent = cfg.orderDeadline;
+    if (!grid) return;
+    grid.innerHTML = cfg.items.map(function(item) {
+      var tags = item.tags.map(function(t,i){ return '<span class="mb ' + (i===0?'mbp':'mbg') + '">' + t + '</span>'; }).join('');
+      return '<div class="mc"><div class="mcat">' + item.cat + '</div><div class="mname">' + item.name + '</div><div class="mdesc">' + item.desc + '</div><div class="mbs">' + tags + '</div><div class="mfoot"><span class="mprice">' + item.price + '</span><span class="mserve">Serves 4–6</span></div></div>';
+    }).join('');
+  } catch(e) { console.warn('renderSpecials error:', e); }
 })();
 
 // ─── Render flash sale badge & modal ─────────────────────────────────────────
