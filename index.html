@@ -1115,13 +1115,7 @@ buildLunchTable(LUNCH_MENU.week2, 'lm-table-2');
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.12});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 function showLM(btn,id){document.querySelectorAll('.lmpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.lmtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
-function showM(btn,id){
-  document.querySelectorAll('.mpanel').forEach(function(p){p.classList.remove('active');p.style.display='none';});
-  document.querySelectorAll('.mtab').forEach(function(t){t.classList.remove('active');});
-  var panel=document.getElementById(id);
-  if(panel){panel.classList.add('active');panel.style.display=(id==='mw')?'block':'grid';}
-  btn.classList.add('active');
-}
+function showM(btn,id){document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
 
 // ═════════════════════════════════════════════════════════════════════════════
 // HOLIDAY PROMO CONFIG
