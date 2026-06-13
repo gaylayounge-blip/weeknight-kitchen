@@ -755,15 +755,15 @@ section{padding:3.5rem 1.25rem;}
 <section id="lunch">
 <div class="si">
   <div class="fu">
-    <div class="ey">New · Monday Delivery</div>
+    <div class="ey">Mon · Wed · Fri Delivery</div>
     <h2>Lunch Delivery Program</h2>
-    <p class="ssub">Five fresh lunches prepped every Monday and delivered to your door by 11:30&nbsp;AM. Refrigerate, reheat, and enjoy — no stress, no mess, no planning required.</p>
+    <p class="ssub">Five fresh lunches cooked in batches throughout the week and delivered three times — so every meal arrives as fresh as possible. Refrigerate, reheat, and enjoy — no stress, no mess, no planning required.</p>
   </div>
   <div class="lsteps fu" style="transition-delay:.1s;">
     <div class="lstep"><div class="lnum">1</div><div><div class="lstitle">Sign up for your block</div><div class="lsdesc">Choose a week from the rotating 2-week menu and reserve your spot.</div></div></div>
-    <div class="lstep"><div class="lnum">2</div><div><div class="lstitle">Pay by Friday</div><div class="lsdesc">Payment due by Friday before your delivery week via Zelle, Cash App, or Apple Pay.</div></div></div>
-    <div class="lstep"><div class="lnum">3</div><div><div class="lstitle">We prep Monday morning</div><div class="lsdesc">All 5 lunches made fresh in our home kitchen the morning of delivery.</div></div></div>
-    <div class="lstep"><div class="lnum">4</div><div><div class="lstitle">Delivered by 11:30 AM</div><div class="lsdesc">Lunches arrive at your door — refrigerate immediately upon delivery.</div></div></div>
+    <div class="lstep"><div class="lnum">2</div><div><div class="lstitle">Order &amp; Pay by Friday at 5 PM</div><div class="lsdesc">Submit your order and payment by Friday at 5 PM before your delivery week via Zelle, Cash App, or Apple Pay.</div></div></div>
+    <div class="lstep"><div class="lnum">3</div><div><div class="lstitle">We cook in fresh batches</div><div class="lsdesc">Mon &amp; Tue lunches cooked Sunday · Wed &amp; Thu cooked Tuesday night · Fri cooked Thursday. No meal sits more than 24 hours before delivery.</div></div></div>
+    <div class="lstep"><div class="lnum">4</div><div><div class="lstitle">Delivered by 11:30 AM</div><div class="lsdesc">Three deliveries per week — Monday (Mon+Tue lunches), Wednesday (Wed+Thu lunches), and Friday (Fri lunch).</div></div></div>
     <div class="lstep"><div class="lnum">5</div><div><div class="lstitle">Reheat &amp; enjoy</div><div class="lsdesc">Fresh shelf life of 4–5 days — eat Monday through Friday without cooking.</div></div></div>
   </div>
   <div class="fu" style="transition-delay:.15s;">
@@ -775,7 +775,7 @@ section{padding:3.5rem 1.25rem;}
     </div>
     <div class="lmpanel active" id="lm1"><table class="lmtable" id="lm-table-1"></table></div>
     <div class="lmpanel" id="lm2"><table class="lmtable" id="lm-table-2"></table></div>
-    <p class="lm-note">All meals delivered Monday · Refrigerate immediately · Ready by 11:30 AM · Menu rotates every 2 weeks</p>
+    <p class="lm-note">Delivered Mon, Wed &amp; Fri by 11:30 AM · Refrigerate immediately · Menu rotates every 2 weeks</p>
     <div style="margin-top:1.2rem;">
       <p style="font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--charcoal);font-weight:600;margin-bottom:0.5rem;">Add-Ons <span style="font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:400;color:var(--mid);">— note selections when ordering</span></p>
       <table class="lmtable" id="lm-addons" style="max-width:340px;"></table>
@@ -785,7 +785,7 @@ section{padding:3.5rem 1.25rem;}
     <div class="lprice-band">
       <div class="lp-item"><div class="lp-amt">$10</div><div class="lp-label">Per lunch with drink (1 day)</div></div>
       <div class="lp-item"><div class="lp-amt">$50</div><div class="lp-label">Full week (5 meals)</div></div>
-      <div class="lp-item"><div class="lp-amt">Mon</div><div class="lp-label">Delivery day &nbsp;·&nbsp; by 11:30 AM</div></div>
+      <div class="lp-item"><div class="lp-amt">3×</div><div class="lp-label">Weekly deliveries &nbsp;·&nbsp; by 11:30 AM</div></div>
     </div>
   </div>
   <div class="lunch-cta-grid fu" style="transition-delay:.25s;">
@@ -809,7 +809,7 @@ section{padding:3.5rem 1.25rem;}
   <div class="fu" style="transition-delay:.3s;margin-top:2.75rem;">
     <div class="ey" style="margin-bottom:.5rem;">Fresh from our kitchen</div>
     <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:.4rem;color:var(--charcoal);">Last Week's Lunches</h3>
-    <p style="font-size:.85rem;color:var(--mid);margin-bottom:1.6rem;line-height:1.7;">Real meals, made fresh every Monday morning. Here's a look at what our lunch delivery clients enjoyed last week.</p>
+    <p style="font-size:.85rem;color:var(--mid);margin-bottom:1.6rem;line-height:1.7;">Real meals, cooked fresh throughout the week — never all at once. Here's a look at what our lunch delivery clients enjoyed last week.</p>
 
     <div class="fok-grid">
 
@@ -1070,18 +1070,18 @@ Follow us on Instagram
 // ─────────────────────────────────────────────────────────────────────────────
 const LUNCH_MENU = {
   week1: [
-    { day: "Monday",    meal: "BBQ Grilled Chicken",           sides: "Gooey Mac n Cheese" },
-    { day: "Tuesday",   meal: "Salisbury Steak",               sides: "Mashed Potatoes and Gravy" },
-    { day: "Wednesday", meal: "Spaghetti Carbonara & Pancetta",sides: "Caesar Salad" },
-    { day: "Thursday",  meal: "Garlic Pork Chops",             sides: "Jasmine Rice + Asparagus" },
-    { day: "Friday",    meal: "Chicken Sliders",               sides: "Chips + Pickles" },
+    { day: "Monday",    meal: "Shrimp Hibachi Fried Rice",     sides: "Egg Roll" },
+    { day: "Tuesday",   meal: "Teriyaki Chicken",              sides: "Steamed Rice + Broccoli" },
+    { day: "Wednesday", meal: "Chicken Enchiladas",            sides: "Spanish Rice" },
+    { day: "Thursday",  meal: "Chicken Fajita Bowl",           sides: "Cilantro Lime Rice" },
+    { day: "Friday",    meal: "Salisbury Steak",               sides: "Mashed Potatoes & Gravy" },
   ],
   week2: [
-    { day: "Monday",    meal: "Sunday Rigatoni with Meatballs",  sides: "Garlic Bread" },
-    { day: "Tuesday",   meal: "Glazed Pork Ribs",               sides: "Potato Salad" },
-    { day: "Wednesday", meal: "Grilled Chicken Fajita Tacos",    sides: "Cabbage Slaw + Yellow Rice" },
-    { day: "Thursday",  meal: "Mediterranean Chicken Kebabs",    sides: "Jasmine Rice" },
-    { day: "Friday",    meal: "Chicken Tenders",                 sides: "Zucchini Dippers + Marinara Sauce" },
+    { day: "Monday",    meal: "Spaghetti & Meat Sauce",        sides: "Garlic Bread + Side Salad" },
+    { day: "Tuesday",   meal: "Garlic Herb Flank Steak",       sides: "Sautéed Garden Zucchini & Squash" },
+    { day: "Wednesday", meal: "Honey Garlic Chicken",          sides: "Steamed Rice" },
+    { day: "Thursday",  meal: "Chicken & Broccoli Stir Fry",   sides: "Steamed Rice" },
+    { day: "Friday",    meal: "BBQ Pulled Pork Sliders",       sides: "Coleslaw" },
   ],
   addons: [
     { item: "Bread (roll or slice)", price: "+$1.00", notes: "" },
