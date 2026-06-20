@@ -480,8 +480,8 @@ section{padding:3.5rem 1.25rem;}
 
 <!-- ── Hero Entry Popup ─────────────────────────────────────────── -->
 <div class="hero-popup-overlay" id="heroPopupOverlay">
-  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="Father's Day Special">
-    <img class="hero-popup-img" id="heroPopupImg" src="" alt="Father's Day Special">
+  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="4th of July BBQ Special">
+    <img class="hero-popup-img" id="heroPopupImg" src="" alt="4th of July BBQ Special">
     <div class="hero-popup-ribbon" id="heroPopupRibbon"></div>
     <button class="hero-popup-close" id="heroPopupClose" aria-label="Close">✕</button>
     <div class="hero-popup-body">
@@ -494,7 +494,7 @@ section{padding:3.5rem 1.25rem;}
         <span class="hero-popup-now" id="heroPopupNow"></span>
         <span class="hero-popup-save" id="heroPopupSave"></span>
       </div>
-      <a class="hero-popup-cta" id="heroPopupCta" href="#promoBanner">See the Father's Day Deal →</a>
+      <a class="hero-popup-cta" id="heroPopupCta" href="#promoBanner">See the 4th of July Deal →</a>
       <button class="hero-popup-skip" id="heroPopupSkip">No thanks, I'll keep browsing</button>
     </div>
   </div>
@@ -606,7 +606,7 @@ section{padding:3.5rem 1.25rem;}
     <p class="wsp-note">Our core menu is always in stock — these specials are available this week only. Order before they're gone!</p>
   </div>
   <div class="mc-grid" id="wspGrid"></div>
-  <p style="margin-top:1.5rem;font-size:.82rem;color:var(--mid);font-style:italic;">Core menu staples — Lasagna · Chicken Enchiladas · Baked Chicken & Rice — available every week. <a href="#menu" onclick="showM(document.querySelector(‘.mtab:nth-child(2)’), ‘me’)">See full menu →</a></p>
+  <p style="margin-top:1.5rem;font-size:.82rem;color:var(--mid);font-style:italic;">Core menu staples — Lasagna · Chicken Enchiladas · Baked Chicken & Rice — available every week. <a href="javascript:void(0)" onclick="showM(document.querySelectorAll(‘.mtab’)[1],’me’);return false;">See full menu →</a></p>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
@@ -652,7 +652,7 @@ section{padding:3.5rem 1.25rem;}
        Change emoji, title, description, items, prices, image, and dates.
        Set active:false to hide the banner entirely between promotions.
   ═══════════════════════════════════════════════════════════════ -->
-  <div class="promo-banner fu" id="promoBanner" onclick="openPromoModal()" style="transition-delay:.06s;" role="button" aria-label="View Memorial Day special offer">
+  <div class="promo-banner fu" id="promoBanner" onclick="openPromoModal()" style="transition-delay:.06s;" role="button" aria-label="View 4th of July special offer">
     <div class="promo-stars" id="promoStars"></div>
     <div class="promo-inner">
       <div>
@@ -711,7 +711,7 @@ section{padding:3.5rem 1.25rem;}
     <div class="ef-card">
       <div class="ef-icon">👥</div>
       <div class="ef-title">Intimate to large groups</div>
-      <div class="ef-desc">We've cooked for groups of 10 to 30+ and we scale with your guest count. Custom menus available for every event. Memorial Day, Father's Day upcoming...</div>
+      <div class="ef-desc">We've cooked for groups of 10 to 30+ and we scale with your guest count. Custom menus available for every event — 4th of July, back-to-school, and more coming up!</div>
     </div>
     <div class="ef-card">
       <div class="ef-icon">📍</div>
@@ -980,8 +980,8 @@ section{padding:3.5rem 1.25rem;}
 <label class="flbl">What would you like to order?</label>
 <select class="fs" name="bundle" required>
 <option value="">Choose an option...</option>
-<optgroup label="👨 Father's Day Special ──">
-<option value="fathers-day-bundle">Father's Day Bundle — Beef Kebab Marinade, BLT Pasta Salad &amp; Blackberry Cobbler · $50 (save $15!)</option>
+<optgroup label="🎆 4th of July Special ──">
+<option value="fourth-of-july-bundle">4th of July BBQ Bundle — BBQ Chicken, Cornbread, Baked Beans &amp; Red White &amp; Blueberry Cobbler · $50 (save $15!)</option>
 </optgroup>
 <optgroup label="── Freezer Meals ──">
 <option>Full freezer bundle — $110 (any 5 entrees)</option>
@@ -1113,7 +1113,13 @@ buildLunchTable(LUNCH_MENU.week2, 'lm-table-2');
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.12});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 function showLM(btn,id){document.querySelectorAll('.lmpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.lmtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
-function showM(btn,id){document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
+function showM(btn,id){
+  document.querySelectorAll('.mpanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
+  var panel=document.getElementById(id);
+  if(panel){panel.classList.add('active');}
+  if(btn){btn.classList.add('active');}
+}
 
 // ═════════════════════════════════════════════════════════════════════════════
 // HOLIDAY PROMO CONFIG
@@ -1130,24 +1136,28 @@ const PROMO_CONFIG = {
   active: true,
 
   // Banner pill label
-  emoji:       "👨",
-  flagText:    "Father's Day Special · Limited Time",
+  emoji:       "🎆",
+  flagText:    "4th of July Special · Limited Time",
 
   // Banner headline & teaser
-  bannerTitle:    "Father's Day Bundle — Treat Dad Right!",
-  bannerSubtitle: "Celebrate the dads in your life with a home-cooked meal worth savoring. Our Father's Day bundle is packed with bold, satisfying flavors — at a special price.",
+  bannerTitle:    "4th of July BBQ Bundle — Fire Up the Flavor!",
+  bannerSubtitle: "Celebrate Independence Day with a real backyard BBQ — home-cooked and delivered to your door. BBQ Chicken, Cornbread, Baked Beans, and a festive Red, White & Blueberry Cobbler to top it all off.",
 
   // What's included (shown as chips on banner, list in popup)
   items: [
-    "Beef Kebab Marinade",
-    "BLT Pasta Salad",
-    "Blackberry Cobbler"
+    "BBQ Chicken",
+    "Cornbread",
+    "Baked Beans",
+    "Red, White & Blueberry Cobbler"
   ],
 
   // Pricing
   originalPrice: "$65",
   salePrice:     "$50",
   savingsTag:    "Save $15",
+
+  // Float badge label
+  floatLabel: "🎆 $50 4th of July BBQ Deal",
 
   // Popup media tabs — add as many photos as you like, videos optional.
   // Each entry: { label, type: "img"|"vid", src }
@@ -1161,9 +1171,9 @@ const PROMO_CONFIG = {
   ],
 
   // Popup body copy
-  popupTitle: "Father's Day Bundle",
-  popupDesc:  "Give Dad the gift of a real home-cooked meal. This bundle brings bold, satisfying flavors to the table — a savory beef kebab marinade, a fresh BLT pasta salad, and a rich blackberry cobbler to finish it off. Everything made fresh, delivered to your door.",
-  popupNote:  "🗓 Order by Friday, June 12 to guarantee delivery the week of Father's Day.",
+  popupTitle: "4th of July BBQ Bundle",
+  popupDesc:  "Skip the restaurant and bring the cookout home. This bundle is everything you need for a proper 4th of July feast — smoky BBQ Chicken, homemade Cornbread, slow-cooked Baked Beans, and a Red, White & Blueberry Cobbler to finish it off sweet. Made fresh in our kitchen, delivered to yours.",
+  popupNote:  "🗓 Order by Thursday, July 3 to guarantee delivery for the holiday.",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -1255,7 +1265,7 @@ const PROMO_CONFIG = {
   });
 
   // Floating badge label
-  document.getElementById('promoFloatLabel').textContent = cfg.emoji + ' ' + cfg.salePrice + " Father's Day Deal";
+  document.getElementById('promoFloatLabel').textContent = cfg.floatLabel || (cfg.emoji + ' ' + cfg.salePrice + ' Deal');
 
   // Show popup after 2s delay
   const popupOverlay = document.getElementById('heroPopupOverlay');
@@ -1316,21 +1326,21 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePromoMo
 // Each item: { name, cat, desc, price, tags[] }
 // ─────────────────────────────────────────────────────────────────────────────
 const WEEKLY_SPECIALS_CONFIG = {
-  weekLabel:     "Week of Jun 8–14",
-  orderDeadline: "Order by Thursday Jun 12",
+  weekLabel:     "Week of Jun 22–28",
+  orderDeadline: "Order by Thursday Jun 26",
   items: [
     {
-      name:  "Beef stroganoff",
-      cat:   "Comfort · Eastern European",
-      desc:  "Tender beef sirloin with mushrooms and onions in a rich, creamy sauce over egg noodles. A classic that reheats beautifully — comfort food at its best.",
+      name:  "Smothered Pork Chops",
+      cat:   "Comfort · Southern",
+      desc:  "Tender bone-in pork chops smothered in a rich, savory onion gravy with bell peppers and mushrooms. Pure Southern comfort food that reheats like a dream.",
       price: "$35",
       tags:  ["This week only", "Limited qty"]
     },
     {
-      name:  "Orange chicken",
-      cat:   "Asian",
-      desc:  "Crispy chicken thighs tossed in a sweet and tangy orange sauce, served with steamed rice and broccoli. A crowd-pleaser every single time.",
-      price: "$30",
+      name:  "Cajun Chicken Pasta Bake",
+      cat:   "Pasta",
+      desc:  "Smoky Cajun-seasoned chicken tossed with penne in a creamy, spiced tomato sauce with bell peppers and onions. Bold, hearty, and packed with flavor.",
+      price: "$35",
       tags:  ["This week only", "Fresh batch"]
     }
   ]
