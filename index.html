@@ -184,12 +184,12 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-
 .flash-modal-cta:hover{opacity:.88;}
 .flash-modal-note{font-size:.78rem;color:var(--mid);text-align:center;margin-top:.75rem;font-style:italic;}
 /* ── End Weekly Meal Prep ─────────────────────────────────────── */
-.mtabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap;}
+.mtabs{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:74px;z-index:95;background:var(--cream);padding:10px 0 14px;margin-bottom:1.25rem;}
 .mtab{font-size:.82rem;font-weight:500;padding:6px 18px;border-radius:2rem;cursor:pointer;border:1px solid var(--border);color:var(--mid);background:transparent;transition:all .15s;}
 .mtab.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
 .mpanel{display:none;}
-.mpanel.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
-#mw.mpanel.active{display:block;}
+.mpanels[data-active="mw"] #mw{display:block;}
+.mpanels[data-active="me"] #me,.mpanels[data-active="ms"] #ms,.mpanels[data-active="mb"] #mb{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
 .mc{background:var(--warm);border:1px solid var(--border);border-radius:1.25rem;padding:1.25rem;transition:transform .2s;}
 .mc:hover{transform:translateY(-4px);}
 .mc.new{border:2px solid #1D9E75;}
@@ -586,10 +586,10 @@ section{padding:3.5rem 1.25rem;}
 <div class="si">
 <div class="fu"><div class="ey">Full menu</div><h2>What's in the freezer</h2><p class="ssub">All meals cooked fresh and frozen in our local kitchen. We operate under Texas cottage food law with full food handler certification and proper labeling on every order.</p></div>
 <div class="mtabs">
-<button class="mtab active" onclick="showM(this,’mw’)">✨ This week’s specials</button>
-<button class="mtab" onclick="showM(this,'me')">Always available</button>
-<button class="mtab" onclick="showM(this,'ms')">Single serve</button>
-<button class="mtab" onclick="showM(this,'mb')">Bundles</button>
+<button class="mtab active" data-panel="mw">✨ This week’s specials</button>
+<button class="mtab" data-panel="me">Always available</button>
+<button class="mtab" data-panel="ms">Single serve</button>
+<button class="mtab" data-panel="mb">Bundles</button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
@@ -597,7 +597,8 @@ section{padding:3.5rem 1.25rem;}
      To update each week: edit WEEKLY_SPECIALS_CONFIG in the script below.
      Change the weekLabel, orderDeadline, and the items array.
 ════════════════════════════════════════════════════════════════ -->
-<div class="mpanel active" id="mw">
+<div class="mpanels" data-active="mw">
+<div class="mpanel" id="mw">
   <div class="wsp-header">
     <div>
       <span class="wsp-week" id="wspWeekLabel"></span>
@@ -606,7 +607,7 @@ section{padding:3.5rem 1.25rem;}
     <p class="wsp-note">Our core menu is always in stock — these specials are available this week only. Order before they're gone!</p>
   </div>
   <div class="mc-grid" id="wspGrid"></div>
-  <p style="margin-top:1.5rem;font-size:.82rem;color:var(--mid);font-style:italic;">Core menu staples — Lasagna · Chicken Enchiladas · Baked Chicken & Rice — available every week. <a href="javascript:void(0)" onclick="showM(document.querySelectorAll(‘.mtab’)[1],’me’);return false;">See full menu →</a></p>
+  <p style="margin-top:1.5rem;font-size:.82rem;color:var(--mid);font-style:italic;">Core menu staples — Lasagna · Chicken Enchiladas · Baked Chicken & Rice — available every week. <a href="javascript:void(0)" onclick="showM(document.querySelector(‘[data-panel=me]’),’me’);return false;">See full menu →</a></p>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
@@ -634,6 +635,7 @@ section{padding:3.5rem 1.25rem;}
 <div class="mc"><div class="mcat">Bundle</div><div class="mname">Freezer starter pack</div><div class="mdesc">Any 3 family entrees. Mix & match and save.</div><div class="mbs"><span class="mb mbb">Best value</span><span class="mb mbg">Mix & match</span></div><div class="mfoot"><span class="mprice">$65</span><span class="mserve">3 entrees · serves 4 each</span></div></div>
 <div class="mc" style="border:2px solid var(--ice-dark);"><div class="mcat">Bundle · most popular</div><div class="mname">Full freezer bundle</div><div class="mdesc">Any 5 family entrees. A full month of backup dinners.</div><div class="mbs"><span class="mb mbb">Most popular</span><span class="mb mbg">Best value</span></div><div class="mfoot"><span class="mprice">$110</span><span class="mserve">5 entrees · best value</span></div></div>
 </div>
+</div><!-- /mpanels -->
 </div>
 </section>
 
@@ -1114,19 +1116,19 @@ const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 function showLM(btn,id){document.querySelectorAll('.lmpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.lmtab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');}
 function showM(btn,id){
-  ['mw','me','ms','mb'].forEach(function(pid){
-    var p=document.getElementById(pid);
-    if(p){p.style.display='none';p.classList.remove('active');}
-  });
+  var cont=document.querySelector('.mpanels');
+  if(cont)cont.setAttribute('data-active',id);
   document.querySelectorAll('.mtab').forEach(function(t){t.classList.remove('active');});
-  var panel=document.getElementById(id);
-  if(panel){panel.style.display=(id==='mw')?'block':'grid';panel.classList.add('active');}
-  if(btn){btn.classList.add('active');}
+  if(btn)btn.classList.add('active');
 }
-// Initialize panel visibility explicitly on load
-(function initMenuPanels(){
-  ['me','ms','mb'].forEach(function(id){var p=document.getElementById(id);if(p)p.style.display='none';});
-  var mw=document.getElementById('mw');if(mw)mw.style.display='block';
+(function(){
+  var tabsEl=document.querySelector('.mtabs');
+  if(!tabsEl)return;
+  tabsEl.addEventListener('click',function(e){
+    var btn=e.target.closest('[data-panel]');
+    if(!btn)return;
+    showM(btn,btn.getAttribute('data-panel'));
+  });
 })();
 
 // ═════════════════════════════════════════════════════════════════════════════
