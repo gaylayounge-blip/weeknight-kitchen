@@ -343,7 +343,7 @@ section{padding:3.5rem 1.25rem;}
   .hero-popup-overlay.open{display:flex;}
   .hero-popup{background:#fff;border-radius:20px;max-width:600px;width:100%;overflow:hidden;position:relative;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.25);display:grid;grid-template-columns:180px 1fr;grid-template-rows:auto 1fr;}
   .hero-popup-img{width:100%;height:100%;min-height:300px;object-fit:cover;object-position:center;display:block;grid-row:2;}
-  .hero-popup-ribbon{grid-column:1/-1;grid-row:1;background:linear-gradient(90deg,#0A1F5C,#1B3278,#8B1A2A);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;text-align:center;}
+  .hero-popup-ribbon{grid-column:1/-1;grid-row:1;background:linear-gradient(90deg,#5C3A1E,#8B4A1F,#C4622A);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;text-align:center;}
   .hero-popup-close{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.4);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;}
   .hero-popup-close:hover{background:rgba(0,0,0,.6);}
   .hero-popup-body{padding:18px 20px 18px;display:flex;flex-direction:column;justify-content:center;gap:0;grid-row:2;}
@@ -355,8 +355,8 @@ section{padding:3.5rem 1.25rem;}
   .hero-popup-was{font-size:.85rem;color:var(--light);text-decoration:line-through;}
   .hero-popup-now{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--charcoal);}
   .hero-popup-save{background:#D4AA50;color:#2C2C2A;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:1rem;}
-  .hero-popup-cta{display:block;text-align:center;background:#1B3278;color:#fff;font-size:.85rem;font-weight:600;padding:.65rem 1.25rem;border-radius:2rem;text-decoration:none;transition:background .2s;margin-bottom:7px;}
-  .hero-popup-cta:hover{background:#8B1A2A;}
+  .hero-popup-cta{display:block;text-align:center;background:#8B4A1F;color:#fff;font-size:.85rem;font-weight:600;padding:.65rem 1.25rem;border-radius:2rem;text-decoration:none;transition:background .2s;margin-bottom:7px;}
+  .hero-popup-cta:hover{background:#C4622A;}
   .hero-popup-skip{display:block;text-align:center;font-size:.72rem;color:var(--light);cursor:pointer;background:none;border:none;width:100%;padding:0;}
   .hero-popup-skip:hover{color:var(--mid);}
   /* Stack on small phones */
@@ -368,15 +368,15 @@ section{padding:3.5rem 1.25rem;}
   /* ── Floating Promo Badge ────────────────────────────────────────── */
   .promo-float{display:none;position:fixed;bottom:28px;right:28px;z-index:150;flex-direction:column;align-items:flex-end;gap:8px;}
   .promo-float.visible{display:flex;}
-  .promo-float-btn{background:#1B3278;color:#fff;border:none;border-radius:2rem;padding:.7rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(27,50,120,.45);transition:transform .2s,box-shadow .2s;text-decoration:none;}
-  .promo-float-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(139,26,42,.55);}
+  .promo-float-btn{background:#8B4A1F;color:#fff;border:none;border-radius:2rem;padding:.7rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(139,74,31,.45);transition:transform .2s,box-shadow .2s;text-decoration:none;}
+  .promo-float-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(196,98,42,.55);}
   .promo-float-pulse{width:10px;height:10px;border-radius:50%;background:#fff;animation:pulse 1.8s ease-in-out infinite;}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
   .promo-float-dismiss{background:rgba(0,0,0,.35);border:none;border-radius:50%;width:24px;height:24px;color:#fff;font-size:.75rem;cursor:pointer;display:flex;align-items:center;justify-content:center;align-self:flex-end;transition:background .2s;}
   .promo-float-dismiss:hover{background:rgba(0,0,0,.55);}
   @media(max-width:480px){.promo-float{bottom:16px;right:16px;}}
   /* ── Holiday Promo Banner ────────────────────────────────────────── */
-  .promo-banner{position:relative;background:linear-gradient(135deg,#0A1F5C 0%,#1B3278 45%,#8B1A2A 100%);border-radius:20px;padding:0;margin:0 0 52px;overflow:hidden;cursor:pointer;box-shadow:0 8px 40px rgba(0,0,0,.18);scroll-margin-top:110px;}
+  .promo-banner{position:relative;background:linear-gradient(135deg,#5C3A1E 0%,#8B4A1F 45%,#C4622A 100%);border-radius:20px;padding:0;margin:0 0 52px;overflow:hidden;cursor:pointer;box-shadow:0 8px 40px rgba(0,0,0,.18);scroll-margin-top:110px;}
   .promo-banner::before{content:'';position:absolute;inset:0;background:url('lunch-img-0096.jpg') center/cover no-repeat;opacity:.22;border-radius:20px;}
   .promo-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:20px;}
   .promo-star{position:absolute;width:4px;height:4px;background:#fff;border-radius:50%;animation:twinkle 2.5s infinite;}
@@ -392,7 +392,7 @@ section{padding:3.5rem 1.25rem;}
   .promo-was{font-size:1rem;color:rgba(255,255,255,.45);text-decoration:line-through;}
   .promo-now{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;line-height:1;}
   .promo-save{background:#D4AA50;color:#2C2C2A;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:1rem;text-transform:uppercase;letter-spacing:.05em;}
-  .promo-cta-btn{background:#fff;color:#1a3a2a;font-size:.9rem;font-weight:700;padding:.85rem 2rem;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:all .2s;flex-shrink:0;align-self:center;box-shadow:0 4px 16px rgba(0,0,0,.15);}
+  .promo-cta-btn{background:#fff;color:#5C3A1E;font-size:.9rem;font-weight:700;padding:.85rem 2rem;border-radius:2rem;text-decoration:none;white-space:nowrap;transition:all .2s;flex-shrink:0;align-self:center;box-shadow:0 4px 16px rgba(0,0,0,.15);}
   .promo-cta-btn:hover{background:#D4AA50;color:#2C2C2A;transform:translateY(-2px);}
   .promo-media-side{position:relative;flex-shrink:0;}
   /* Popup modal */
@@ -405,7 +405,7 @@ section{padding:3.5rem 1.25rem;}
   .promo-modal-media{width:100%;max-height:340px;object-fit:cover;display:block;}
   .promo-modal-video{width:100%;max-height:340px;object-fit:cover;display:block;background:#000;}
   .promo-modal-body{padding:28px 32px 32px;}
-  .promo-modal-flag{display:inline-flex;align-items:center;gap:6px;background:#E8EEF8;color:#1B3278;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:2rem;margin-bottom:12px;}
+  .promo-modal-flag{display:inline-flex;align-items:center;gap:6px;background:#F5EAE3;color:#8B4A1F;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:2rem;margin-bottom:12px;}
   .promo-modal-title{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--charcoal);margin-bottom:6px;}
   .promo-modal-desc{font-size:.9rem;color:var(--mid);line-height:1.65;margin-bottom:18px;}
   .promo-modal-items{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
@@ -416,8 +416,8 @@ section{padding:3.5rem 1.25rem;}
   .promo-modal-now{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--charcoal);}
   .promo-modal-save-tag{background:#D4AA50;color:#2C2C2A;font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:1rem;}
   .promo-modal-note{font-size:.78rem;color:var(--light);margin-bottom:20px;font-style:italic;}
-  .promo-modal-order-btn{display:inline-block;background:#1B3278;color:#fff;font-size:.95rem;font-weight:600;padding:.9rem 2.2rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
-  .promo-modal-order-btn:hover{background:#8B1A2A;}
+  .promo-modal-order-btn{display:inline-block;background:#8B4A1F;color:#fff;font-size:.95rem;font-weight:600;padding:.9rem 2.2rem;border-radius:2rem;text-decoration:none;transition:background .2s;}
+  .promo-modal-order-btn:hover{background:#C4622A;}
   .promo-media-tabs{display:flex;gap:8px;margin-bottom:10px;}
   .pmtab{font-size:.75rem;font-weight:500;padding:4px 14px;border-radius:2rem;cursor:pointer;border:1px solid var(--border);color:var(--mid);background:transparent;transition:all .15s;}
   .pmtab.active{background:var(--charcoal);color:#fff;border-color:var(--charcoal);}
@@ -483,8 +483,8 @@ section{padding:3.5rem 1.25rem;}
 
 <!-- ── Hero Entry Popup ─────────────────────────────────────────── -->
 <div class="hero-popup-overlay" id="heroPopupOverlay">
-  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="4th of July BBQ Special">
-    <img class="hero-popup-img" id="heroPopupImg" src="" alt="4th of July BBQ Special">
+  <div class="hero-popup" role="dialog" aria-modal="true" aria-label="Labor Day Special">
+    <img class="hero-popup-img" id="heroPopupImg" src="" alt="Labor Day Special">
     <div class="hero-popup-ribbon" id="heroPopupRibbon"></div>
     <button class="hero-popup-close" id="heroPopupClose" aria-label="Close">✕</button>
     <div class="hero-popup-body">
@@ -497,7 +497,7 @@ section{padding:3.5rem 1.25rem;}
         <span class="hero-popup-now" id="heroPopupNow"></span>
         <span class="hero-popup-save" id="heroPopupSave"></span>
       </div>
-      <a class="hero-popup-cta" id="heroPopupCta" href="#promoBanner">See the 4th of July Deal →</a>
+      <a class="hero-popup-cta" id="heroPopupCta" href="#promoBanner">See the Labor Day Deal →</a>
       <button class="hero-popup-skip" id="heroPopupSkip">No thanks, I'll keep browsing</button>
     </div>
   </div>
@@ -658,7 +658,7 @@ section{padding:3.5rem 1.25rem;}
        Change emoji, title, description, items, prices, image, and dates.
        Set active:false to hide the banner entirely between promotions.
   ═══════════════════════════════════════════════════════════════ -->
-  <div class="promo-banner fu" id="promoBanner" onclick="openPromoModal()" style="transition-delay:.06s;" role="button" aria-label="View 4th of July special offer">
+  <div class="promo-banner fu" id="promoBanner" onclick="openPromoModal()" style="transition-delay:.06s;" role="button" aria-label="View Labor Day special offer">
     <div class="promo-stars" id="promoStars"></div>
     <div class="promo-inner">
       <div>
@@ -988,8 +988,8 @@ section{padding:3.5rem 1.25rem;}
 <label class="flbl">What would you like to order?</label>
 <select class="fs" name="bundle" required>
 <option value="">Choose an option...</option>
-<optgroup label="🎆 4th of July Special ──">
-<option value="fourth-of-july-bundle">4th of July BBQ Bundle — BBQ Chicken, Cornbread, Baked Beans &amp; Red White &amp; Blueberry Cobbler · $50 (save $15!)</option>
+<optgroup label="🍢 Labor Day Special ──">
+<option value="labor-day-bundle">Labor Day Luau Bundle — Grilled Hawaiian Chicken Skewers, Sticky Rice, Watermelon Feta Salad &amp; Texas Sheet Cake · $50 (save $15!)</option>
 </optgroup>
 <optgroup label="── Freezer Meals ──">
 <option>Full freezer bundle — $110 (any 5 entrees)</option>
@@ -1156,19 +1156,19 @@ const PROMO_CONFIG = {
   active: true,
 
   // Banner pill label
-  emoji:       "🎆",
-  flagText:    "4th of July Special · Limited Time",
+  emoji:       "🍢",
+  flagText:    "Labor Day Special · Limited Time",
 
   // Banner headline & teaser
-  bannerTitle:    "4th of July BBQ Bundle — Fire Up the Flavor!",
-  bannerSubtitle: "Celebrate Independence Day with a real backyard BBQ — home-cooked and delivered to your door. BBQ Chicken, Cornbread, Baked Beans, and a festive Red, White & Blueberry Cobbler to top it all off.",
+  bannerTitle:    "Labor Day Luau Bundle — One Last Taste of Summer!",
+  bannerSubtitle: "Send summer off right with a home-cooked luau spread, delivered to your door. Grilled Hawaiian Chicken Skewers, Sticky Rice, Watermelon Feta Salad, and Texas Sheet Cake for dessert.",
 
   // What's included (shown as chips on banner, list in popup)
   items: [
-    "BBQ Chicken",
-    "Cornbread",
-    "Baked Beans",
-    "Red, White & Blueberry Cobbler"
+    "Grilled Hawaiian Chicken Skewers",
+    "Sticky Rice",
+    "Watermelon Feta Salad",
+    "Texas Sheet Cake"
   ],
 
   // Pricing
@@ -1177,20 +1177,20 @@ const PROMO_CONFIG = {
   savingsTag:    "Save $15",
 
   // Float badge label
-  floatLabel: "🎆 $50 4th of July BBQ Deal",
+  floatLabel: "🍢 $50 Labor Day Deal",
 
   // Popup media tabs — add as many photos as you like, videos optional.
   // Each entry: { label, type: "img"|"vid", src }
+  // TODO(Gayla): swap this placeholder for real photos of the Labor Day dishes once you have them —
+  // grilled Hawaiian chicken skewers, sticky rice, watermelon feta salad, Texas sheet cake.
   media: [
-    { label: "🫘 Baked Beans",       type: "img", src: "baked-beans-1.jpg" },
-    { label: "🍗 BBQ Chicken",       type: "img", src: "event-roasted-chicken.jpg" },
-    { label: "🫘 Fresh Batch",       type: "img", src: "baked-beans-2.jpg" },
+    { label: "🍢 Hawaiian Skewers", type: "img", src: "lunch-img-0096.jpg" },
   ],
 
   // Popup body copy
-  popupTitle: "4th of July BBQ Bundle",
-  popupDesc:  "Skip the restaurant and bring the cookout home. This bundle is everything you need for a proper 4th of July feast — smoky BBQ Chicken, homemade Cornbread, slow-cooked Baked Beans, and a Red, White & Blueberry Cobbler to finish it off sweet. Made fresh in our kitchen, delivered to yours.",
-  popupNote:  "🗓 Order by Thursday, July 3 to guarantee delivery for the holiday.",
+  popupTitle: "Labor Day Luau Bundle",
+  popupDesc:  "Send summer off in style! This bundle brings the taste of the islands home — juicy Grilled Hawaiian Chicken Skewers, fluffy Sticky Rice, a refreshing Watermelon Feta Salad, and a slice of rich Texas Sheet Cake to finish things off sweet. Made fresh in our kitchen, delivered to yours.",
+  popupNote:  "🗓 Order by Friday, September 4 to guarantee delivery for Labor Day weekend.",
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
