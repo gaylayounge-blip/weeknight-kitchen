@@ -1135,18 +1135,18 @@ Follow us on Instagram
 // ─────────────────────────────────────────────────────────────────────────────
 const LUNCH_MENU = {
   week1: [
-    { day: "Monday",    meal: "Baked Chicken & Rice",          sides: "Honey Glazed Carrots + Dinner Roll" },
-    { day: "Tuesday",   meal: "Asian Sesame Chicken Dinner",   sides: "Sesame Noodles + Steamed Broccoli" },
-    { day: "Wednesday", meal: "Lasagna",                       sides: "Garlic Bread + Side Salad" },
-    { day: "Thursday",  meal: "Chicken Enchiladas",            sides: "Spanish Rice + Charro Beans" },
-    { day: "Friday",    meal: "Beef Stroganoff",               sides: "Egg Noodles + Roasted Asparagus" },
+    { day: "Monday",    meal: "Sweet & Sour Meatballs",        sides: "Steamed Rice + Broccoli" },
+    { day: "Tuesday",   meal: "Chicken Bowl",                  sides: "Pico de Gallo + Tortilla Chips" },
+    { day: "Wednesday", meal: "Shrimp Hibachi",                sides: "Fried Rice + Hibachi Vegetables" },
+    { day: "Thursday",  meal: "Chicken Alfredo",               sides: "Garlic Bread + Side Salad" },
+    { day: "Friday",    meal: "Cajun Chicken",                 sides: "Spanish Rice + Charro Beans" },
   ],
   week2: [
-    { day: "Monday",    meal: "Salisbury Steak & Mashed Potatoes", sides: "Buttered Corn + Dinner Roll" },
-    { day: "Tuesday",   meal: "Orange Chicken",                sides: "Jasmine Rice + Steamed Broccoli" },
-    { day: "Wednesday", meal: "Chicken & Broccoli Pasta Bake",  sides: "Garlic Bread + Side Salad" },
-    { day: "Thursday",  meal: "Honey Garlic Chicken",          sides: "Steamed Rice + Snap Peas" },
-    { day: "Friday",    meal: "Mac & Cheese",                  sides: "Side Salad + Dinner Roll" },
+    { day: "Monday",    meal: "Mongolian Beef",                sides: "Steamed Rice + Stir-Fried Broccoli" },
+    { day: "Tuesday",   meal: "Cornbread Chicken Pot Pie",     sides: "Side Salad" },
+    { day: "Wednesday", meal: "Rigatoni Bolognese",            sides: "Garlic Bread" },
+    { day: "Thursday",  meal: "Japanese Chicken Curry",        sides: "Steamed Rice" },
+    { day: "Friday",    meal: "Grilled Skirt Steak Grain Bowl", sides: "Chimichurri + Pico de Gallo" },
   ],
   addons: [
     { item: "Bread (roll or slice)", price: "+$1.00", notes: "" },
@@ -1396,28 +1396,28 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePromoMo
 // Each item: { name, cat, desc, price, tags[] }
 // ─────────────────────────────────────────────────────────────────────────────
 const WEEKLY_SPECIALS_CONFIG = {
-  weekLabel:     "Week of Aug 3–9",
-  orderDeadline: "Order by Friday Aug 7",
+  weekLabel:     "Week of Aug 10–16",
+  orderDeadline: "Order by Friday Aug 14",
   items: [
     {
-      name:  "Stir-Fry Cumin Green Beans and Chicken with Rice Noodles",
-      cat:   "Asian · Chicken",
-      desc:  "Tender chicken and crisp green beans stir-fried with fragrant cumin over silky rice noodles — a bold, fast-flavored dish ready to reheat any weeknight.",
-      price: "$35",
+      name:  "Crispy Pork Belly",
+      cat:   "Asian · Pork",
+      desc:  "Slow-roasted pork belly with a shatter-crisp skin and tender, juicy meat — served over garlic fried rice with a bright cucumber salad on the side.",
+      price: "$40",
       tags:  ["This week only", "New dish"]
     },
     {
-      name:  "Berbere Brown Sugar Chicken and Steamed Rice",
-      cat:   "Global · Chicken",
-      desc:  "Chicken glazed in a warm, brown sugar-sweetened berbere spice blend, served over fluffy steamed rice — smoky, sweet, and full of flavor.",
-      price: "$35",
+      name:  "Cacio e Pepe",
+      cat:   "Pasta · Italian",
+      desc:  "Classic Roman pasta tossed in a silky pecorino and black pepper sauce — simple, rich, and comforting. Just three ingredients done right.",
+      price: "$32",
       tags:  ["This week only", "New dish"]
     },
     {
-      name:  "One-Pot Orecchiette with Swiss Chard, Sausage and Lemon",
-      cat:   "Pasta · Sausage",
-      desc:  "Orecchiette pasta simmered one-pot style with savory sausage, tender Swiss chard, and a bright hit of lemon. Comforting and freezer-ready.",
-      price: "$35",
+      name:  "Beef Chili",
+      cat:   "Comfort · Beef",
+      desc:  "Hearty, slow-simmered beef chili loaded with warm spices — served with a side of skillet cornbread. The kind of dish that fills up the whole kitchen.",
+      price: "$32",
       tags:  ["This week only", "New dish"]
     }
   ]
