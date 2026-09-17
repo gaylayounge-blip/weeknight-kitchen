@@ -855,6 +855,26 @@ section{padding:3.5rem 1.25rem;}
         </div>
       </div>
 
+      <!-- Sesame Chicken & Broccoli Bowls -->
+      <div class="fok-dish">
+        <div class="fok-label">Sesame Chicken &amp; Broccoli Bowls</div>
+        <div class="fok-photos">
+          <img src="lunch-sesame-img-0871.jpg" alt="Sesame Chicken and Broccoli Bowls batch cooked for lunch delivery" loading="lazy">
+          <img src="lunch-sesame-img-0872.jpg" alt="Sesame Chicken with Broccoli and Snow Peas lunch bowls" loading="lazy">
+          <img src="lunch-sesame-img-1021.jpg" alt="Sesame Chicken lunch bowls ready for delivery" loading="lazy">
+          <img src="lunch-sesame-img-1023.jpg" alt="Sesame Chicken lunch box with steamed rice" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Fried Chicken, Cornbread & Green Beans -->
+      <div class="fok-dish">
+        <div class="fok-label">Fried Chicken, Cornbread &amp; Green Beans</div>
+        <div class="fok-photos">
+          <img src="lunch-friedchicken-img-1031.jpg" alt="Fried chicken thighs fresh out of the oven" loading="lazy">
+          <img src="lunch-friedchicken-img-1034.jpg" alt="Fried chicken lunch box with cornbread and green beans" loading="lazy">
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -1078,18 +1098,18 @@ Follow us on Instagram
 // ─────────────────────────────────────────────────────────────────────────────
 const LUNCH_MENU = {
   week1: [
-    { day: "Monday",    meal: "Chicken Fried Rice",            sides: "Egg Roll" },
-    { day: "Tuesday",   meal: "Asian Glazed Chicken",          sides: "Jasmine Rice + Bok Choy" },
-    { day: "Wednesday", meal: "Beef Enchiladas",               sides: "Spanish Rice" },
-    { day: "Thursday",  meal: "Korean Beef Bowl",              sides: "Steamed Rice + Cucumber Salad" },
-    { day: "Friday",    meal: "Smothered Pork Chops",          sides: "Mashed Potatoes + Green Beans" },
+    { day: "Monday",    meal: "Taco Stuffed Shells",           sides: "Tomato Salad" },
+    { day: "Tuesday",   meal: "Chicken Parmesan Pasta Bake",   sides: "Zucchini" },
+    { day: "Wednesday", meal: "Sweet and Sour Pork",           sides: "Fried Rice" },
+    { day: "Thursday",  meal: "Sesame Chicken",                sides: "Steamed Rice + Snow Peas" },
+    { day: "Friday",    meal: "Cheeseburger Sliders",          sides: "Kettle Chips + Dill Pickle Spear" },
   ],
   week2: [
-    { day: "Monday",    meal: "Lasagna",                       sides: "Garlic Bread + Side Salad" },
-    { day: "Tuesday",   meal: "Beef Tips & Gravy",             sides: "White Rice + Green Beans" },
-    { day: "Wednesday", meal: "Cajun Chicken Pasta Bake",      sides: "Garlic Bread" },
-    { day: "Thursday",  meal: "Honey Garlic Chicken",          sides: "Steamed Rice" },
-    { day: "Friday",    meal: "Chicken Sliders",               sides: "Coleslaw" },
+    { day: "Monday",    meal: "BBQ Meatloaf",                  sides: "Mashed Potatoes + Green Beans + Roll" },
+    { day: "Tuesday",   meal: "Chicken Alfredo",               sides: "Breadstick + Caesar Salad" },
+    { day: "Wednesday", meal: "One Pot Chicken and Rice",      sides: "Sautéed Spinach" },
+    { day: "Thursday",  meal: "Lasagna",                       sides: "Garden Salad + Garlic Bread" },
+    { day: "Friday",    meal: "Chili Beef Noodles",            sides: "Coconut Rice" },
   ],
   addons: [
     { item: "Bread (roll or slice)", price: "+$1.00", notes: "" },
@@ -1339,22 +1359,32 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePromoMo
 // Each item: { name, cat, desc, price, tags[] }
 // ─────────────────────────────────────────────────────────────────────────────
 const WEEKLY_SPECIALS_CONFIG = {
-  weekLabel:     "Week of Jun 29–Jul 5",
-  orderDeadline: "Order by Wednesday Jul 1",
+  weekLabel:     "Week of Sept 14–20",
+  orderDeadline: "Order by Friday Sept 18",
   items: [
     {
-      name:  "Smothered Pork Chops",
-      cat:   "Comfort · Southern",
-      desc:  "Tender bone-in pork chops smothered in a rich, savory onion gravy with bell peppers and mushrooms. Pure Southern comfort food that reheats like a dream.",
+      name:  "Sweet and Sour Pork Fried Rice",
+      cat:   "Asian · Pork",
+      desc:  "Tender pork in a tangy-sweet sauce with peppers and pineapple, served over savory fried rice. A bright, crowd-pleasing favorite.",
       price: "$35",
-      tags:  ["This week only", "Limited qty"]
+      serveLabel: "Serves 4–6",
+      tags:  ["This week only"]
     },
     {
-      name:  "Korean Beef Bowl",
-      cat:   "Asian · Beef",
-      desc:  "Savory ground beef in a sweet and garlicky Korean-inspired glaze over steamed rice, topped with green onions and sesame seeds. Bold flavor, quick reheat.",
+      name:  "Baked Chicken and Steamed Rice",
+      cat:   "Comfort",
+      desc:  "Juicy oven-baked chicken over fluffy steamed rice — a simple, home-cooked classic the whole family will ask for again.",
       price: "$35",
-      tags:  ["This week only", "New dish"]
+      serveLabel: "Serves 4–6",
+      tags:  ["This week only"]
+    },
+    {
+      name:  "Fresh Tamales",
+      cat:   "Handmade · Tex-Mex",
+      desc:  "A dozen fresh tamales, made in-house and ready for Friday pickup. Order & pay by Wednesday to reserve yours.",
+      price: "$19/dozen",
+      serveLabel: "Makes 1 dozen",
+      tags:  ["Order by Wednesday", "Pickup Friday"]
     }
   ]
 };
@@ -1394,7 +1424,8 @@ const FLASH_SALE_CONFIG = {
     if (!grid) return;
     grid.innerHTML = cfg.items.map(function(item) {
       var tags = item.tags.map(function(t,i){ return '<span class="mb ' + (i===0?'mbp':'mbg') + '">' + t + '</span>'; }).join('');
-      return '<div class="mc"><div class="mcat">' + item.cat + '</div><div class="mname">' + item.name + '</div><div class="mdesc">' + item.desc + '</div><div class="mbs">' + tags + '</div><div class="mfoot"><span class="mprice">' + item.price + '</span><span class="mserve">Serves 4–6</span></div></div>';
+      var serveLabel = item.serveLabel ? item.serveLabel : 'Serves 4–6';
+      return '<div class="mc"><div class="mcat">' + item.cat + '</div><div class="mname">' + item.name + '</div><div class="mdesc">' + item.desc + '</div><div class="mbs">' + tags + '</div><div class="mfoot"><span class="mprice">' + item.price + '</span><span class="mserve">' + serveLabel + '</span></div></div>';
     }).join('');
   } catch(e) { console.warn('renderSpecials error:', e); }
 })();
