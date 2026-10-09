@@ -152,11 +152,6 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-
 .wmp-cta:hover{opacity:.88;}
 @media(max-width:600px){.wmp-header{flex-direction:column;align-items:flex-start;}.wmp-grid{grid-template-columns:1fr;}}
 
-/* ── Weekly Specials Panel ─────────────────────────────── */
-.wsp-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;padding:1.25rem 1.5rem;background:linear-gradient(135deg,rgba(122,158,126,.1),rgba(196,113,74,.06));border:1px solid rgba(122,158,126,.25);border-radius:1.25rem;}
-.wsp-week{display:inline-block;font-size:.8rem;font-weight:700;color:var(--sage-dark);background:rgba(122,158,126,.15);border:1px solid rgba(122,158,126,.35);border-radius:2rem;padding:4px 14px;letter-spacing:.05em;text-transform:uppercase;margin-right:.6rem;}
-.wsp-deadline{display:inline-block;font-size:.78rem;font-weight:600;color:var(--terra);background:var(--terra-light);border-radius:2rem;padding:4px 12px;letter-spacing:.03em;}
-.wsp-note{font-size:.82rem;color:var(--mid);font-style:italic;max-width:380px;line-height:1.6;}
 .mc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;}
 
 /* ── Freezer Flash Sale floating badge ─────────────────── */
@@ -188,7 +183,6 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-
 .mtab{font-size:.82rem;font-weight:500;padding:6px 18px;border-radius:2rem;cursor:pointer;border:1px solid var(--border);color:var(--mid);background:transparent;transition:all .15s;}
 .mtab.active{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal);}
 .mpanel{display:none;}
-.mpanels[data-active="mw"] #mw{display:block;}
 .mpanels[data-active="me"] #me,.mpanels[data-active="ms"] #ms,.mpanels[data-active="mb"] #mb,.mpanels[data-active="mt"] #mt{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;}
 .mc{background:var(--warm);border:1px solid var(--border);border-radius:1.25rem;padding:1.25rem;transition:transform .2s;}
 .mc:hover{transform:translateY(-4px);}
@@ -592,30 +586,13 @@ section{padding:3.5rem 1.25rem;}
 <div class="fu"><div class="ey">Full menu</div><h2>What's in the freezer</h2><p class="ssub">All meals cooked fresh and frozen in our local kitchen. We operate under Texas cottage food law with full food handler certification and proper labeling on every order.</p></div>
 <div class="gf-banner">Every meal on our menu is 100% gluten free — the one exception is our tamales.</div>
 <div class="mtabs">
-<button class="mtab active" data-panel="mw">✨ This week’s specials</button>
-<button class="mtab" data-panel="me">Always available</button>
+<button class="mtab active" data-panel="me">Always available</button>
 <button class="mtab" data-panel="ms">Single serve</button>
 <button class="mtab" data-panel="mb">Bundles</button>
 <button class="mtab" data-panel="mt">🫔 Tamales</button>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     WEEKLY SPECIALS PANEL
-     To update each week: edit WEEKLY_SPECIALS_CONFIG in the script below.
-     Change the weekLabel, orderDeadline, and the items array.
-════════════════════════════════════════════════════════════════ -->
-<div class="mpanels" data-active="mw">
-<div class="mpanel" id="mw">
-  <div class="wsp-header">
-    <div>
-      <span class="wsp-week" id="wspWeekLabel"></span>
-      <span class="wsp-deadline" id="wspDeadline"></span>
-    </div>
-    <p class="wsp-note">Our core menu is always in stock — these specials are available this week only. Order before they're gone!</p>
-  </div>
-  <div class="mc-grid" id="wspGrid"></div>
-  <p style="margin-top:1.5rem;font-size:.82rem;color:var(--mid);font-style:italic;">Core menu staples — Lasagna · Chicken Enchiladas · Baked Chicken & Rice — available every week. <a href="javascript:void(0)" onclick="showM(document.querySelector(‘[data-panel=me]’),’me’);return false;">See full menu →</a></p>
-</div>
+<div class="mpanels" data-active="me">
 
 <!-- ═══════════════════════════════════════════════════════════════
      ALWAYS AVAILABLE — CORE FAMILY MEALS (10 items)
@@ -1433,42 +1410,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePromoMo
 
 
 // ─────────────────────────────────────────────────────────────────────────────
-// WEEKLY ROTATING SPECIALS
-// Update each week: change weekLabel, orderDeadline, and the items array.
-// Each item: { name, cat, desc, price, tags[] }
-// ─────────────────────────────────────────────────────────────────────────────
-const WEEKLY_SPECIALS_CONFIG = {
-    weekLabel:     "Week of Oct 5–11",
-       orderDeadline: "Order by Friday Oct 9",
-       items: [
-            {
-                       name:  "Mac & Cheese (Family Size)",
-                       cat:   "Pasta · Comfort",
-                       desc:  "Our creamy, gooey baked mac and cheese — the ultimate crowd-pleaser, family size and ready straight from the freezer to the oven. Stocked up and ready to go!",
-                       price: "$30–$45",
-                       serveLabel: "Serves 4–6",
-                       tags:  ["This week only"]
-            },
-            {
-                       name:  "Korean Meatballs with Steamed Rice",
-                       cat:   "Korean · New",
-                       desc:  "Tender Korean-style meatballs glazed in a sweet-savory sauce, served over steamed rice. Making their debut this week!",
-                       price: "$35",
-                       serveLabel: "Serves 4–6",
-                       tags:  ["New!", "This week only"]
-            },
-            {
-      name:  "Fresh Tamales",
-      cat:   "Handmade · Tex-Mex",
-      desc:  "A dozen fresh tamales, made in-house and ready for Friday pickup. Order & pay by Wednesday to reserve yours.",
-      price: "$19/dozen",
-      serveLabel: "Makes 1 dozen",
-      tags:  ["Order by Wednesday", "Pickup Friday"]
-    }
-  ]
-};
-
-// ─────────────────────────────────────────────────────────────────────────────
 // FREEZER FLASH SALE / BUNDLE SPECIAL
 // Set active: true to show the floating badge and popup.
 // Use this whenever you're overstocked and want to move inventory fast!
@@ -1490,24 +1431,6 @@ const FLASH_SALE_CONFIG = {
   note:  "Limited quantities — first come, first served. DM us or order via the link below.",
   cta:   "Claim this bundle →"
 };
-
-// ─── Render weekly specials ───────────────────────────────────────────────────
-(function renderSpecials() {
-  try {
-    const cfg = WEEKLY_SPECIALS_CONFIG;
-    var wl = document.getElementById('wspWeekLabel');
-    var wd = document.getElementById('wspDeadline');
-    var grid = document.getElementById('wspGrid');
-    if (wl) wl.textContent = cfg.weekLabel;
-    if (wd) wd.textContent = cfg.orderDeadline;
-    if (!grid) return;
-    grid.innerHTML = cfg.items.map(function(item) {
-      var tags = item.tags.map(function(t,i){ return '<span class="mb ' + (i===0?'mbp':'mbg') + '">' + t + '</span>'; }).join('');
-      var serveLabel = item.serveLabel ? item.serveLabel : 'Serves 4–6';
-      return '<div class="mc"><div class="mcat">' + item.cat + '</div><div class="mname">' + item.name + '</div><div class="mdesc">' + item.desc + '</div><div class="mbs"><span class="mb mbgf">Gluten Free</span>' + tags + '</div><div class="mfoot"><span class="mprice">' + item.price + '</span><span class="mserve">' + serveLabel + '</span></div></div>';
-    }).join('');
-  } catch(e) { console.warn('renderSpecials error:', e); }
-})();
 
 // ─── Render flash sale badge & modal ─────────────────────────────────────────
 (function renderFlash() {
